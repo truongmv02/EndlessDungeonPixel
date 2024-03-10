@@ -106,11 +106,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arthurPendragon__0
+      name: arthurPendragon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b933309022c26b249a284a5eb720c4f9
-      internalID: -1160251957
+      spriteID: 866f403f145a4c1419b85603d4665c16
+      internalID: 519870809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__1
+      name: arthurPendragon_1
       rect:
         serializedVersion: 2
         x: 32
@@ -145,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21c1ac6d4630a5b439cbd19c1d44ce9a
-      internalID: 2129297200
+      spriteID: 241f44f213de82f45abdd2c167def233
+      internalID: -1453662284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__2
+      name: arthurPendragon_2
       rect:
         serializedVersion: 2
         x: 64
@@ -166,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985b634c664d2a241b885a0eb1aaaef9
-      internalID: 1081546517
+      spriteID: 084f5ccd707f0f540b234e1e713f09a0
+      internalID: -1856424072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__3
+      name: arthurPendragon_3
       rect:
         serializedVersion: 2
         x: 96
@@ -187,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c8bff15f7191e6479f43ed663277550
-      internalID: 1583987554
+      spriteID: 32cd9091e5770784f8389a29d6f3f464
+      internalID: -1608570449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__4
+      name: arthurPendragon_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25711e46cab69374cbf060ca3490ee3c
-      internalID: 1966976649
+      spriteID: efde2ac7e5e42e04d9997992c035f54a
+      internalID: 359338637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__5
+      name: arthurPendragon_5
       rect:
         serializedVersion: 2
         x: 32
@@ -229,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b35f465c400d4644e98ec7e5a3e60f79
-      internalID: 276357911
+      spriteID: ee8698002882c924382791c5c3839357
+      internalID: -2082684185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__6
+      name: arthurPendragon_6
       rect:
         serializedVersion: 2
         x: 64
@@ -250,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1bdf7a302079348a6bebe3d70893d0
-      internalID: 1576688353
+      spriteID: 60c4c013160a0f8418ec660beeb5c855
+      internalID: 1417390356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__7
+      name: arthurPendragon_7
       rect:
         serializedVersion: 2
         x: 96
@@ -271,14 +297,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920d841645b924f45ba2664963f2aa90
-      internalID: -505434450
+      spriteID: 5aacf276659eb6e40a800b0d922914b7
+      internalID: -85899578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__8
+      name: arthurPendragon_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +318,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c02fae8ffdc7c614c9271fe491a805e6
-      internalID: -1301240410
+      spriteID: 8028826fd02d21346be21cc535426f89
+      internalID: -1578508808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__9
+      name: arthurPendragon_9
       rect:
         serializedVersion: 2
         x: 32
@@ -313,14 +339,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32738dcded25d01449449c6df05d8c62
-      internalID: -1012141806
+      spriteID: 5e1347d9df4b19441a7052354c9918e0
+      internalID: -46925459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__10
+      name: arthurPendragon_10
       rect:
         serializedVersion: 2
         x: 64
@@ -334,14 +360,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53f740d3ccead2d4b9e204879ba7c07c
-      internalID: 193121123
+      spriteID: 6874d37fba5c8774685ec43bdaca7a08
+      internalID: -952589610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__11
+      name: arthurPendragon_11
       rect:
         serializedVersion: 2
         x: 96
@@ -355,14 +381,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cd430deef01e45488214f7ddd9d5dd9
-      internalID: 1435244238
+      spriteID: 6ea9ffb05274d3845b8b85f018cc6294
+      internalID: 524802419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__12
+      name: arthurPendragon_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +402,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 545f48da91d1c7e4f83aefb36aad482c
-      internalID: -1516215699
+      spriteID: cae96a9c31f673e43ba43c4762c973f3
+      internalID: -299796810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__13
+      name: arthurPendragon_13
       rect:
         serializedVersion: 2
         x: 32
@@ -397,14 +423,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3343e023ac3b01a4db10023e9d1bc0b1
-      internalID: 740851949
+      spriteID: d7d79b11c637c2141a322b2ed26500b9
+      internalID: -255305475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__14
+      name: arthurPendragon_14
       rect:
         serializedVersion: 2
         x: 64
@@ -418,14 +444,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23778d37118eae64c8e020c63ae853f5
-      internalID: -364162156
+      spriteID: 4e277daa02c653245987ba8df752b289
+      internalID: 1035268354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__15
+      name: arthurPendragon_15
       rect:
         serializedVersion: 2
         x: 96
@@ -439,14 +465,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a47e825db1fa54648ab1d69f3dccbf9b
-      internalID: 1678659098
+      spriteID: 80b1ff9f5aa57164d96c11bd0a24ce42
+      internalID: -1682195132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__16
+      name: arthurPendragon_16
       rect:
         serializedVersion: 2
         x: 0
@@ -460,14 +486,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2f28569d86dfad41ab112cd3e804ad6
-      internalID: 264958268
+      spriteID: dd568f2b8e16d7841a2866a9e90c09b0
+      internalID: -479698286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__17
+      name: arthurPendragon_17
       rect:
         serializedVersion: 2
         x: 32
@@ -481,14 +507,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00eb0de1ba5eb4a4eb5b70e1e4da789a
-      internalID: 436096147
+      spriteID: a062847aafc1d7f48a7bd36d0c4064f3
+      internalID: 1262806064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__18
+      name: arthurPendragon_18
       rect:
         serializedVersion: 2
         x: 64
@@ -502,14 +528,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f63b9aa88577b6c438403de7436bb941
-      internalID: -1402782408
+      spriteID: 744926fd8e4e6d74aa1bf8858f82f106
+      internalID: -1267264479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__19
+      name: arthurPendragon_19
       rect:
         serializedVersion: 2
         x: 96
@@ -523,14 +549,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ef23dcd3ee7dfb42888f51e9527dae1
-      internalID: -932500011
+      spriteID: 305c307af32a4fa409361d1e8a063988
+      internalID: -1222860896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__20
+      name: arthurPendragon_20
       rect:
         serializedVersion: 2
         x: 0
@@ -544,14 +570,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45f10df2e54e10240ba3cdd778f3ce39
-      internalID: 47746813
+      spriteID: ec1156e55727309428b2d9f87c65e4c5
+      internalID: 536830118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__21
+      name: arthurPendragon_21
       rect:
         serializedVersion: 2
         x: 32
@@ -565,14 +591,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f9b5028725e72c4aa411b90403efacf
-      internalID: 478743194
+      spriteID: e8b96f3c698d54e4eb4142a7ed613f8a
+      internalID: -1188531496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__22
+      name: arthurPendragon_22
       rect:
         serializedVersion: 2
         x: 64
@@ -586,14 +612,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 281a2d8a4bb50954aa6793cfe89c64fb
-      internalID: 831552834
+      spriteID: 11b84954b3ae46f4db651a4246995f95
+      internalID: -833649773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__23
+      name: arthurPendragon_23
       rect:
         serializedVersion: 2
         x: 96
@@ -607,14 +633,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32237954925aaec4aa4750900e0d7f2c
-      internalID: -1400127252
+      spriteID: 0dc440e2cc2610941a2d638159b03dc4
+      internalID: -1014794308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__24
+      name: arthurPendragon_24
       rect:
         serializedVersion: 2
         x: 0
@@ -628,14 +654,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d76bc96cd6ad1024db5218bc80e5c2b3
-      internalID: 1882814541
+      spriteID: c26790d8af9e773429d1cbe1ab0af60a
+      internalID: 792282198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__25
+      name: arthurPendragon_25
       rect:
         serializedVersion: 2
         x: 32
@@ -649,14 +675,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cc09519fa224d94f9c883e93f0131b5
-      internalID: -830314100
+      spriteID: 036de52160bb8ff468876e0b06d6d8f9
+      internalID: -1402575240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__26
+      name: arthurPendragon_26
       rect:
         serializedVersion: 2
         x: 64
@@ -670,14 +696,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 870720affb3feab41ba94211de8feed1
-      internalID: -1044262097
+      spriteID: 6b92757e09afbf94794817274ff24683
+      internalID: -2058823367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__27
+      name: arthurPendragon_27
       rect:
         serializedVersion: 2
         x: 96
@@ -691,14 +717,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1964db435c5f6e444bc12d2c35e0906f
-      internalID: 638558031
+      spriteID: a9614c23f02265746b183173f9c227f9
+      internalID: -505295652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__28
+      name: arthurPendragon_28
       rect:
         serializedVersion: 2
         x: 0
@@ -712,14 +738,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2c8d03a074d91b479d4fab475bc0790
-      internalID: -1516811229
+      spriteID: d88d31f2540f4164b9933ebf0ec45f1a
+      internalID: -1037866661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__29
+      name: arthurPendragon_29
       rect:
         serializedVersion: 2
         x: 32
@@ -733,14 +759,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0c0b5345d091bc43862118cf5540978
-      internalID: -559267876
+      spriteID: 3cce6569061e8c442a10d3dd91cc53f5
+      internalID: 979926972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__30
+      name: arthurPendragon_30
       rect:
         serializedVersion: 2
         x: 64
@@ -754,14 +780,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea9d1576451aa0c40931f1be7b458482
-      internalID: -989023691
+      spriteID: baa2f4feee3ffd94195de78cd8644560
+      internalID: 838768033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arthurPendragon__31
+      name: arthurPendragon_31
       rect:
         serializedVersion: 2
         x: 96
@@ -775,8 +801,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 018e0bc20503c3841b119e3f08eea815
-      internalID: -209221507
+      spriteID: ed45c28eedcc45a428592f86c5dab25c
+      internalID: 1413759662
       vertices: []
       indices: 
       edges: []
@@ -792,38 +818,38 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      arthurPendragon__0: -1160251957
-      arthurPendragon__1: 2129297200
-      arthurPendragon__10: 193121123
-      arthurPendragon__11: 1435244238
-      arthurPendragon__12: -1516215699
-      arthurPendragon__13: 740851949
-      arthurPendragon__14: -364162156
-      arthurPendragon__15: 1678659098
-      arthurPendragon__16: 264958268
-      arthurPendragon__17: 436096147
-      arthurPendragon__18: -1402782408
-      arthurPendragon__19: -932500011
-      arthurPendragon__2: 1081546517
-      arthurPendragon__20: 47746813
-      arthurPendragon__21: 478743194
-      arthurPendragon__22: 831552834
-      arthurPendragon__23: -1400127252
-      arthurPendragon__24: 1882814541
-      arthurPendragon__25: -830314100
-      arthurPendragon__26: -1044262097
-      arthurPendragon__27: 638558031
-      arthurPendragon__28: -1516811229
-      arthurPendragon__29: -559267876
-      arthurPendragon__3: 1583987554
-      arthurPendragon__30: -989023691
-      arthurPendragon__31: -209221507
-      arthurPendragon__4: 1966976649
-      arthurPendragon__5: 276357911
-      arthurPendragon__6: 1576688353
-      arthurPendragon__7: -505434450
-      arthurPendragon__8: -1301240410
-      arthurPendragon__9: -1012141806
+      arthurPendragon_0: 519870809
+      arthurPendragon_1: -1453662284
+      arthurPendragon_10: -952589610
+      arthurPendragon_11: 524802419
+      arthurPendragon_12: -299796810
+      arthurPendragon_13: -255305475
+      arthurPendragon_14: 1035268354
+      arthurPendragon_15: -1682195132
+      arthurPendragon_16: -479698286
+      arthurPendragon_17: 1262806064
+      arthurPendragon_18: -1267264479
+      arthurPendragon_19: -1222860896
+      arthurPendragon_2: -1856424072
+      arthurPendragon_20: 536830118
+      arthurPendragon_21: -1188531496
+      arthurPendragon_22: -833649773
+      arthurPendragon_23: -1014794308
+      arthurPendragon_24: 792282198
+      arthurPendragon_25: -1402575240
+      arthurPendragon_26: -2058823367
+      arthurPendragon_27: -505295652
+      arthurPendragon_28: -1037866661
+      arthurPendragon_29: 979926972
+      arthurPendragon_3: -1608570449
+      arthurPendragon_30: 838768033
+      arthurPendragon_31: 1413759662
+      arthurPendragon_4: 359338637
+      arthurPendragon_5: -2082684185
+      arthurPendragon_6: 1417390356
+      arthurPendragon_7: -85899578
+      arthurPendragon_8: -1578508808
+      arthurPendragon_9: -46925459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
