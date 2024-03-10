@@ -11,6 +11,7 @@ public class EntityController : MonoBehaviour
     public Animator Animator { get; protected set; }
     public SpriteRenderer SpriteRenderer { get; protected set; }
     public Rigidbody2D Rigidbody { get; protected set; }
+    public MoveController Movement { get; protected set; }
     public StateMachine StateMachine { get; protected set; }
 
     protected virtual void Awake()
@@ -18,6 +19,7 @@ public class EntityController : MonoBehaviour
         Animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         Rigidbody = GetComponent<Rigidbody2D>();
+        Movement = GetComponentInChildren<MoveController>();
         StateMachine = GetComponentInChildren<StateMachine>();
     }
 
