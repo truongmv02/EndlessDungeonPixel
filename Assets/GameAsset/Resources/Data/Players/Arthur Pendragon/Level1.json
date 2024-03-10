@@ -1,0 +1,5 @@
+{
+  "runtimeAnimator": "",
+  "weapon": "",
+  "stateMachinePath": ["Players", "base"]
+}
