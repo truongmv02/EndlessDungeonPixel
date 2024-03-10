@@ -18,11 +18,11 @@ public class MoveController : MonoBehaviour
     {
         CanMove = true;
         FacingDirection = 1;
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     protected virtual void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     public virtual void Move(Vector2 direction)

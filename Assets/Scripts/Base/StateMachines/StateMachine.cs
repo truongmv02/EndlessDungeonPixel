@@ -18,6 +18,7 @@ public class StateMachine : MonoBehaviour
 
     public object Owner { get; protected set; }
 
+
     private void Update()
     {
         CurrentStaste?.LogicUpdate();
@@ -32,11 +33,13 @@ public class StateMachine : MonoBehaviour
         Owner = owner;
         Animator = animator;
         UtilsData.AddTypes(info.states, StateList, gameObject);
+        State idleState = null;
         foreach (var state in StateList)
         {
             state.Init(this, animator);
-            if (state.StateInfo.stateName == "Idle") ChangeState(state);
+            if (state.StateInfo.stateName == "Idle") idleState = state;
         }
+        ChangeState(idleState);
     }
 
 

@@ -14,7 +14,8 @@ public class PlayerController : EntityController
     protected override void Awake()
     {
         base.Awake();
-
+        var stateMachineInfo = DataManager.Instance.StateMachineDatas.GetInfo(new[] { "Players", "base" });
+        StateMachine.Init(this, stateMachineInfo, Animator);
     }
 
     protected override void Update()
