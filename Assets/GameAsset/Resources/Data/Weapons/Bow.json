@@ -15,12 +15,24 @@
     },
     {
       "assemblyName": "Assembly-CSharp",
+      "type": "DamageToObject",
+      "typeInfo": "DamageInfo",
+      "data": {
+        "amount": 2
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
       "type": "Charge",
       "typeInfo": "ChargeInfo",
       "data": {
         "chargeTime": 0.3,
         "chargeAmount": 1
       }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeToSpawnObject"
     },
     {
       "assemblyName": "Assembly-CSharp",

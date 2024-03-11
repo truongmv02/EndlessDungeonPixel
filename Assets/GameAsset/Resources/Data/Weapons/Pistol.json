@@ -11,6 +11,14 @@
       "data": {
         "prefab": "Prefab/Bullet/PistolBullet"
       }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "DamageToObject",
+      "typeInfo": "DamageInfo",
+      "data": {
+        "amount": 3
+      }
     }
   ]
 }

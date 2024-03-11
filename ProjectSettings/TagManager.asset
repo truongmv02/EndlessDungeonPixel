@@ -12,6 +12,7 @@ TagManager:
   - CollisionTilemap
   - MinimapTilemap
   - WalkableTilemap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -25,10 +26,10 @@ TagManager:
   - Enviroment
   - Player
   - Enemy
-  - EnemyBullet
-  - PlayerBullet
-  - 
-  - 
+  - PlayerTakeDamage
+  - EnemyTakeDamage
+  - PlayerDamage
+  - EnemyDamage
   - 
   - 
   - 

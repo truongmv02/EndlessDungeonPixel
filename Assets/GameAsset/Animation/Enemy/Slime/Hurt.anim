@@ -181,7 +181,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.x
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -220,7 +220,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -250,7 +250,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -289,7 +289,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -587,7 +587,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.x
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -626,7 +626,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -656,7 +656,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.x
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -695,7 +695,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Size.y
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0

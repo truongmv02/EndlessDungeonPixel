@@ -34,7 +34,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0
@@ -62,7 +62,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3579746941
+      path: 2331895470
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 61
@@ -122,7 +122,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Hitbox
+    path: Combat
     classID: 61
     script: {fileID: 0}
     flags: 0

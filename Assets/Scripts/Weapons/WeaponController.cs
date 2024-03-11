@@ -51,8 +51,8 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         AnimationHandler = GetComponent<WeaponAnimationEventHandler>();
         WeaponSprite = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
         AttackPoint = transform.Find("AttackPosition");
-        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Bow"));
-        StateMachineInfo stateInfo = DataManager.Instance.StateMachineDatas.GetInfo(new[] { "Weapons", "Bow" });
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Pistol"));
+        StateMachineInfo stateInfo = DataManager.Instance.StateMachineDatas.GetInfo(new[] { "Weapons", "Pistol" });
         StateMachine.Init(this, stateInfo, Animator);
     }
 
