@@ -25,6 +25,16 @@
     {
       "assemblyName": "Assembly-CSharp",
       "type": "ChargeToSpawnObject"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "OptionalSprite",
+      "typeInfo": "OptionalSpriteInfo",
+      "data": {
+        "sprite": "Sprites/Bullet/arrow",
+        "position": { "x": 0, "y": 0 },
+        "rotation": -45
+      }
     }
   ]
 }

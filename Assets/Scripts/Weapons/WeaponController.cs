@@ -22,8 +22,8 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     public Transform AttackPoint { set; get; }
     public SpriteRenderer WeaponSprite { get; set; }
     public EntityController Owner { get; set; }
-
     public Animator Animator { get; protected set; }
+    public WeaponAnimationEventHandler AnimationHandler { get; protected set; }
 
     public bool GetInput()
     {
@@ -37,13 +37,18 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         Animator.runtimeAnimatorController = Info.runtimeAnimatorController;
         WeaponSprite.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
         AttackPoint.localPosition = Info.attackPosition;
-        UtilsData.AddTypes(Info.components, components, gameObject);
+        UtilsData.AddTypes(Info.components, components, gameObject, (comp) =>
+        {
+            var setOwner = comp as ISetOwner;
+            setOwner?.SetOwner(this);
+        });
     }
 
     private void Awake()
     {
         Animator = GetComponent<Animator>();
         StateMachine = GetComponentInChildren<StateMachine>();
+        AnimationHandler = GetComponent<WeaponAnimationEventHandler>();
         WeaponSprite = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
         AttackPoint = transform.Find("AttackPosition");
         SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Bow"));
