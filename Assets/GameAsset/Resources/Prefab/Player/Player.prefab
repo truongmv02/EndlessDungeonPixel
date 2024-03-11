@@ -314,7 +314,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &978943248967614552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -415,6 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5188086222202493811}
   - component: {fileID: 7985853804003912922}
+  - component: {fileID: 4522370662829359611}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -450,7 +451,7 @@ Animator:
   m_GameObject: {fileID: 8479472254633681411}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f85e8a5fdacf72d47b72154fc9cfd0c0, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -461,6 +462,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4522370662829359611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479472254633681411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6045d9864d256dc4aab887d1fe93cca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8528662622216292620
 GameObject:
   m_ObjectHideFlags: 0

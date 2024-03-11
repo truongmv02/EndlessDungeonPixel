@@ -1,0 +1,30 @@
+{
+  "position": { "x": 0.22, "y": 0.45 },
+  "attackPosition": { "x": 0.3, "y": 0.02 },
+  "rotation": 45,
+  "runtimeAnimatorController": "AnimatorController/Weapon/BowAC",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "prefab": "Prefab/Bullet/Arrow",
+        "spawnTurnDelay": 0.1
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "Charge",
+      "typeInfo": "ChargeInfo",
+      "data": {
+        "chargeTime": 0.3,
+        "chargeAmount": 1
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeToSpawnObject"
+    }
+  ]
+}

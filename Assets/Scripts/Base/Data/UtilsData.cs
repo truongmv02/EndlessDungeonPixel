@@ -22,7 +22,14 @@ public static class UtilsData
         if (!string.IsNullOrEmpty(typeInfoString))
         {
             Type typeInfo = subInfo.assembly.GetType(typeInfoString);
-            subInfo.data = JsonUtility.FromJson(json["data"].ToString(), typeInfo);
+            if (typeInfo == null)
+            {
+                Debug.Log($"{typeInfoString} not found!");
+            }
+            else
+            {
+                subInfo.data = JsonUtility.FromJson(json["data"].ToString(), typeInfo);
+            }
         }
 
         return subInfo;

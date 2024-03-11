@@ -18,7 +18,7 @@ public class BulletController : RootComponent<BulletInfo>, IResetObject
     SpriteRenderer spriteRenderer;
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         //textMeshPro.text = a;
     }
 
