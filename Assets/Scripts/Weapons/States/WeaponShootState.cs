@@ -4,9 +4,14 @@ public class WeaponShootState : State
 {
     protected WeaponController weapon;
 
+    AddObjectHandle addObject;
+
     public override void Enter()
     {
         base.Enter();
+        addObject.Position = weapon.AttackPoint.position;
+        addObject.Direction = weapon.transform.right;
+        addObject.Handle();
     }
 
     public override void Exit()
@@ -23,5 +28,6 @@ public class WeaponShootState : State
     {
         base.Init(stateMachine, animator);
         weapon = (WeaponController)stateMachine.Owner;
+        addObject = weapon.GetComponent<AddObjectHandle>();
     }
 }
