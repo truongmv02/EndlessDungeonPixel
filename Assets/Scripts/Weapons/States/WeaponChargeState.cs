@@ -20,6 +20,8 @@ public class WeaponChargeState : State
     {
         base.Init(stateMachine, animator);
         WeaponController weapon = stateMachine.Owner as WeaponController;
+        BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(WeaponChargeState), animator.name);
         charge = weapon.GetComponent<Charge>();
+        BaseUtils.ValidateCheckNullValue(charge, nameof(charge), nameof(WeaponChargeState), animator.name);
     }
 }

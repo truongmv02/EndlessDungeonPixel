@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8624958367323455121}
   - component: {fileID: 3362487693116301646}
   - component: {fileID: -842739581491102260}
+  - component: {fileID: 6891000520897372837}
   m_Layer: 14
   m_Name: Arrow
   m_TagString: Untagged
@@ -146,6 +147,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04a2135241e1798489551f2cd654a8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Info>k__BackingField:
+    objectTags:
+    - Enemy
+--- !u!114 &6891000520897372837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442312903392198390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99be904552686c246a637d1ee745ef45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Info>k__BackingField:

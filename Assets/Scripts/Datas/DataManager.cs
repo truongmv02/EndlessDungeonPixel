@@ -1,7 +1,10 @@
 ﻿public class DataManager : Singleton<DataManager>
 {
-    public StateMachineDatas StateMachineDatas { private set; get; }
+    public StateMachineData WeaponStateMachine { private set; get; }
+    public StateMachineData PlayerStateMachine { private set; get; }
     public WeaponData WeaponDatas { private set; get; }
+    public StatDatas WeaponStats { private set; get; }
+    public StatDatas PlayerStats { private set; get; }
 
     public DataManager()
     {
@@ -10,7 +13,9 @@
     public virtual void LoadData()
     {
         WeaponDatas = new WeaponData();
-        StateMachineDatas = new StateMachineDatas();
-
+        WeaponStateMachine = new StateMachineData("Weapons");
+        PlayerStateMachine = new StateMachineData("Players");
+        WeaponStats = new StatDatas("Weapons");
+        PlayerStats = new StatDatas("Players");
     }
 }

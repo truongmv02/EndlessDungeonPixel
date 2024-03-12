@@ -15,7 +15,7 @@ public class AddObjectInfo
 
 public class AddObjectHandle : BaseComponent<AddObjectInfo>, IHandle
 {
-    GameObject prefab;
+    public GameObject prefab;
     public Vector3 Position { set; get; }
     public Vector3 Direction { set; get; }
     public event Action<GameObject> OnCreateObjectFinish;
@@ -75,4 +75,5 @@ public class AddObjectHandle : BaseComponent<AddObjectInfo>, IHandle
         base.SetInfo(info);
         prefab = Resources.Load<GameObject>(Info.prefab);
     }
+
 }

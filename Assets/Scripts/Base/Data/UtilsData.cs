@@ -74,7 +74,10 @@ public static class UtilsData
         foreach (var type in types)
         {
             var component = type as Component;
-            if (component) GameObject.Destroy(component);
+            if (component)
+            {
+                GameObject.DestroyImmediate(component);
+            }
         }
 
         types.Clear();

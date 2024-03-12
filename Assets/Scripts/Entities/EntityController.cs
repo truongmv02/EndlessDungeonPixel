@@ -13,13 +13,14 @@ public class EntityController : MonoBehaviour
     public Rigidbody2D Rigidbody { get; protected set; }
     public MoveController Movement { get; protected set; }
     public StateMachine StateMachine { get; protected set; }
+    public Stats Stats { get; protected set; } = new Stats();
 
     protected virtual void Awake()
     {
         Animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         Rigidbody = GetComponent<Rigidbody2D>();
-        Movement = GetComponentInChildren<MoveController>();
+        Movement = GetComponent<MoveController>();
         StateMachine = GetComponentInChildren<StateMachine>();
     }
 

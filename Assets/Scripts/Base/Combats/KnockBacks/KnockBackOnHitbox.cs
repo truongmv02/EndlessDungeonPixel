@@ -12,12 +12,12 @@ public class KnockBackOnHitbox : MonoBehaviour, ISetInfo, ISetKnockBackInfo
         KnockBack(collision.transform);
     }
 
-
     void KnockBack(Transform target)
     {
         if (!target.TryGetComponent<IKnockBackable>(out var knockBack)) return;
         if (!string.IsNullOrEmpty(Info.objectTags.FirstOrDefault(x => x == target.tag)))
         {
+            knockBackInfo.direction = transform.up;
             knockBack.KnockBack(knockBackInfo);
         }
         OnKnockBack?.Invoke();
@@ -25,7 +25,6 @@ public class KnockBackOnHitbox : MonoBehaviour, ISetInfo, ISetKnockBackInfo
 
     public void SetKnockBackInfo(KnockBackInfo info)
     {
-        Debug.Log(info.strength);
         knockBackInfo = info;
     }
 

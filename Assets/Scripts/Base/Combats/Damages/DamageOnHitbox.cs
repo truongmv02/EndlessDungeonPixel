@@ -7,6 +7,10 @@ public class DamageOnHitbox : MonoBehaviour, ISetInfo, ISetDamageInfo
     [field: SerializeField] public CombatInfo Info { get; set; }
     public event Action OnDamage;
     DamageInfo damageInfo;
+    private void Start()
+    {
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damage(collision.transform);
@@ -25,12 +29,16 @@ public class DamageOnHitbox : MonoBehaviour, ISetInfo, ISetDamageInfo
 
     public void SetDamageInfo(DamageInfo info)
     {
-        Debug.Log(info.amount);
         damageInfo = info;
     }
 
     public void SetInfo(object info)
     {
         Info = info as CombatInfo;
+    }
+
+    public void HandleStatChange(float value)
+    {
+        damageInfo.amount = value;
     }
 }

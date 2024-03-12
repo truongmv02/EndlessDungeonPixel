@@ -10,6 +10,8 @@ public class WeaponInfo
     public Vector2 attackPosition;
     public float rotation;
     public RuntimeAnimatorController runtimeAnimatorController;
+    public string stats;
+    public string stateMachine;
     public SubInfo[] components;
     public SubInfo[] conditions;
 }
@@ -17,14 +19,22 @@ public class WeaponInfo
 [DisallowMultipleComponent]
 public class WeaponController : RootComponent<WeaponInfo>, IGetInput
 {
+    public string weaponName;
     public StateMachine StateMachine { get; protected set; }
     public bool Input { protected get; set; }
     public Transform AttackPoint { set; get; }
     public SpriteRenderer WeaponSprite { get; set; }
+    public SpriteRenderer OptionalSprite { get; protected set; }
     public EntityController Owner { get; set; }
     public Animator Animator { get; protected set; }
     public WeaponAnimationEventHandler AnimationHandler { get; protected set; }
+    public Stats Stats { get; protected set; } = new Stats();
 
+    [ContextMenu("Init Weapon")]
+    public void Init()
+    {
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo(weaponName));
+    }
     public bool GetInput()
     {
         return Input;
@@ -33,15 +43,25 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     public override void SetInfo(object info)
     {
         base.SetInfo(info);
+        OptionalSprite.enabled = false;
         transform.localPosition = Info.position;
         Animator.runtimeAnimatorController = Info.runtimeAnimatorController;
         WeaponSprite.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
         AttackPoint.localPosition = Info.attackPosition;
+
+        Stats.Clear();
+        Stats.Init(DataManager.Instance.WeaponStats.GetStats(Info.stats));
+
         UtilsData.AddTypes(Info.components, components, gameObject, (comp) =>
         {
             var setOwner = comp as ISetOwner;
             setOwner?.SetOwner(this);
+            var setStats = comp as ISetStats;
+            setStats?.SetStats(Stats);
         });
+
+        StateMachineInfo stateInfo = DataManager.Instance.WeaponStateMachine.GetInfo(Info.stateMachine);
+        StateMachine.Init(this, stateInfo, Animator);
     }
 
     private void Awake()
@@ -50,10 +70,9 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         StateMachine = GetComponentInChildren<StateMachine>();
         AnimationHandler = GetComponent<WeaponAnimationEventHandler>();
         WeaponSprite = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
+        OptionalSprite = GetComponentInChildren<OptionalSpriteMarket>().SpriteRenderer;
         AttackPoint = transform.Find("AttackPosition");
-        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Pistol"));
-        StateMachineInfo stateInfo = DataManager.Instance.StateMachineDatas.GetInfo(new[] { "Weapons", "Pistol" });
-        StateMachine.Init(this, stateInfo, Animator);
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Bow"));
     }
 
 }

@@ -6,7 +6,8 @@ public class MoveController : MonoBehaviour
 {
     protected Rigidbody2D _rigidbody;
 
-    public float Speed { set; get; } = 4;
+    // public float Speed { set; get; } = 4;
+    public BaseStat Speed { set; get; } = new BaseStat() { Value = 4 };
     public bool CanMove { get; set; }
 
     public int FacingDirection { get; private set; }
@@ -27,7 +28,7 @@ public class MoveController : MonoBehaviour
 
     public virtual void Move(Vector2 direction)
     {
-        Move(Speed, direction);
+        Move(Speed.Value, direction);
     }
     public virtual void Move(float speed, Vector2 direction)
     {

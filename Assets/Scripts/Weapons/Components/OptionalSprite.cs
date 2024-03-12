@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,14 +14,10 @@ public class OptionalSprite : BaseComponent<OptionalSpriteInfo>, ISetOwner
 {
     WeaponController weapon;
     SpriteRenderer spriteRenderer;
-    private void Awake()
-    {
-        spriteRenderer = GetComponentInChildren<OptionalSpriteMarket>().SpriteRenderer;
-
-    }
-
     private void Start()
     {
+        BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(OptionalSprite), name);
+        spriteRenderer = weapon.OptionalSprite;
         spriteRenderer.sprite = Resources.Load<Sprite>(Info.sprite);
         spriteRenderer.transform.localPosition = Info.postion;
         spriteRenderer.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);

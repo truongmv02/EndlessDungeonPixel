@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class StateMachineData : BaseData
 {
-    public StateMachineInfo GetStateMachineInfo(string name)
+    public StateMachineData(string path)
+    {
+        LoadData("Data/StateMachines/" + path);
+    }
+
+    public StateMachineInfo GetInfo(string name)
     {
         StateMachineInfo stateMachineInfo = GetData<StateMachineInfo>(name);
         AddSubInfos(stateMachineInfo, data_dict[name].AsObject);

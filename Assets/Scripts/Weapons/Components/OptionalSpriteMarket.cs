@@ -8,5 +8,6 @@ public class OptionalSpriteMarket : MonoBehaviour
     private void Awake()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        BaseUtils.ValidateCheckNullValue(SpriteRenderer, nameof(SpriteRenderer), nameof(OptionalSpriteMarket), name);
     }
 }

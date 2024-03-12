@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Charge))]
-[RequireComponent(typeof(AddObjectHandle))]
 public class ChargeToSpawnObject : MonoBehaviour
 {
     private Charge charge;
-    private AddObjectHandle addObject;
+    private AddObjectHandle addObjectHandle;
 
     private void Start()
     {
         charge = GetComponent<Charge>();
-        addObject = GetComponent<AddObjectHandle>();
+        addObjectHandle = GetComponent<AddObjectHandle>();
+
+        BaseUtils.ValidateCheckNullValue(charge, nameof(charge), nameof(ChargeToSpawnObject), name);
+        BaseUtils.ValidateCheckNullValue(addObjectHandle, nameof(addObjectHandle), nameof(ChargeToSpawnObject), name);
+
         charge.OnCurrentChargeChange += OnCurrentChargeChange;
     }
 
     private void OnCurrentChargeChange(int value)
     {
-        addObject.Info.turnCount = value;
+        addObjectHandle.Info.turnCount = value;
     }
 }

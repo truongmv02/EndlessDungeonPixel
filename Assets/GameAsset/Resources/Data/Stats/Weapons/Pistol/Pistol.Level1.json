@@ -1,0 +1,16 @@
+{
+  "stats": [
+    {
+      "statName": "TimeCountDown",
+      "value": 0.1
+    },
+    {
+      "statName": "Damage",
+      "value": 3
+    },
+    {
+      "statName": "KnockBackStrength",
+      "value": 5
+    }
+  ]
+}

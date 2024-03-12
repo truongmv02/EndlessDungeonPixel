@@ -17,6 +17,12 @@ public class BaseData
         return data;
     }
 
+    public JSONNode GetData(int level)
+    {
+        var data = data_dict["Level" + level];
+        return data;
+    }
+
     public T GetData<T>(string key)
     {
         var data = JsonUtility.FromJson<T>(data_dict[key].AsObject.ToString());

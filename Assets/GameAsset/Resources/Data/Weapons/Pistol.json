@@ -3,6 +3,8 @@
   "attackPosition": { "x": 0.64, "y": 0.18 },
   "rotation": 0,
   "runtimeAnimatorController": "AnimatorController/Weapon/PistolAC",
+  "stats": "Pistol",
+  "stateMachine": "Pistol",
   "components": [
     {
       "assemblyName": "Assembly-CSharp",
@@ -14,20 +16,11 @@
     },
     {
       "assemblyName": "Assembly-CSharp",
-      "type": "DamageToObject",
-      "typeInfo": "DamageInfo",
-      "data": {
-        "amount": 3
-      }
+      "type": "DamageToObject"
     },
     {
       "assemblyName": "Assembly-CSharp",
-      "type": "KnockBackToObject",
-      "typeInfo": "KnockBackInfo",
-      "data": {
-        "strength": 5,
-        "direction": { "x": 4, "y": 5 }
-      }
+      "type": "KnockBackToObject"
     }
   ]
 }
