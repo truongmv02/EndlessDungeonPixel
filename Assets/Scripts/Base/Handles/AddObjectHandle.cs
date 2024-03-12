@@ -18,7 +18,7 @@ public class AddObjectHandle : BaseComponent<AddObjectInfo>, IHandle
     GameObject prefab;
     public Vector3 Position { set; get; }
     public Vector3 Direction { set; get; }
-    public Action<GameObject> CreateObjCallback { set; get; }
+    public event Action<GameObject> OnCreateObjectFinish;
 
     private void Awake()
     {
@@ -45,14 +45,14 @@ public class AddObjectHandle : BaseComponent<AddObjectInfo>, IHandle
                 float delay = Info.spawnAngleDelay * j + i * Info.spawnTurnDelay;
                 LeanTween.delayedCall(delay, () =>
                 {
-                    SpawnObject(Position, currentDirection, CreateObjCallback);
+                    SpawnObject(Position, currentDirection);
                     currentDirection = rotationQuaternion * currentDirection;
                 });
             }
         }
     }
 
-    private void SpawnObject(Vector3 position, Vector3 direction, Action<GameObject> callback)
+    private void SpawnObject(Vector3 position, Vector3 direction)
     {
         GameObject obj = ObjectPool.Instance.GetObject(prefab);
         ISetInfo setInfo = obj.GetComponent<ISetInfo>();
@@ -62,10 +62,7 @@ public class AddObjectHandle : BaseComponent<AddObjectInfo>, IHandle
 
         obj.transform.up = direction;
         obj.transform.position = position;
-        if (callback != null)
-        {
-            callback(obj);
-        }
+        OnCreateObjectFinish?.Invoke(obj);
     }
 
     protected virtual void SetObjectInfo(ISetInfo setInfo)

@@ -19,6 +19,15 @@
       "data": {
         "amount": 3
       }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "KnockBackToObject",
+      "typeInfo": "KnockBackInfo",
+      "data": {
+        "strength": 5,
+        "direction": { "x": 4, "y": 5 }
+      }
     }
   ]
 }

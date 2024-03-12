@@ -23,6 +23,15 @@
     },
     {
       "assemblyName": "Assembly-CSharp",
+      "type": "KnockBackToObject",
+      "typeInfo": "KnockBackInfo",
+      "data": {
+        "strength": 5,
+        "direction": { "x": 4, "y": 5 }
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
       "type": "Charge",
       "typeInfo": "ChargeInfo",
       "data": {

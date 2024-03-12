@@ -2,15 +2,9 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
-public class DamageOnHitboxInfo
-{
-    public string[] objectTags;
-}
-
 public class DamageOnHitbox : MonoBehaviour, ISetInfo, ISetDamageInfo
 {
-    [field: SerializeField] public DamageOnHitboxInfo Info { get; set; }
+    [field: SerializeField] public CombatInfo Info { get; set; }
     public event Action OnDamage;
     DamageInfo damageInfo;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +31,6 @@ public class DamageOnHitbox : MonoBehaviour, ISetInfo, ISetDamageInfo
 
     public void SetInfo(object info)
     {
-        Info = info as DamageOnHitboxInfo;
+        Info = info as CombatInfo;
     }
 }
