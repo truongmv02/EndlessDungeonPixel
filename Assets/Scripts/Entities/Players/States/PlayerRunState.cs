@@ -18,6 +18,7 @@ public class PlayerRunState : State
     {
         base.Init(stateMachine, animator);
         PlayerController player = stateMachine.Owner as PlayerController;
+        BaseUtils.ValidateCheckNullValue(player, nameof(player), nameof(PlayerRunState), animator.name);
         movement = player.Movement;
     }
 }

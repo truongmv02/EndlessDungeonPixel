@@ -72,6 +72,14 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         WeaponSprite = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
         OptionalSprite = GetComponentInChildren<OptionalSpriteMarket>().SpriteRenderer;
         AttackPoint = transform.Find("AttackPosition");
+
+        BaseUtils.ValidateCheckNullValue(Animator, nameof(Animator), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(StateMachine, nameof(StateMachine), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(StateMachine, nameof(StateMachine), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(AnimationHandler, nameof(AnimationHandler), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(OptionalSprite, nameof(OptionalSprite), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(AttackPoint, nameof(AttackPoint), nameof(WeaponController), name);
+
         SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Bow"));
     }
 

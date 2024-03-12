@@ -17,6 +17,9 @@ public class PlayerController : EntityController
     {
         base.Awake();
         weapon = GetComponentInChildren<WeaponController>();
+
+        BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(PlayerController), name);
+
         Stats.Init(DataManager.Instance.PlayerStats.GetStats("Arthur Pendragon"));
         Movement.Speed = Stats["Speed"];
         var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo("base");

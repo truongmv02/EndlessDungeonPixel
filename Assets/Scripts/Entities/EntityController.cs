@@ -22,6 +22,12 @@ public class EntityController : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody2D>();
         Movement = GetComponent<MoveController>();
         StateMachine = GetComponentInChildren<StateMachine>();
+
+        BaseUtils.ValidateCheckNullValue(Animator, nameof(Animator), nameof(EntityController), name);
+        BaseUtils.ValidateCheckNullValue(SpriteRenderer, nameof(SpriteRenderer), nameof(EntityController), name);
+        BaseUtils.ValidateCheckNullValue(Rigidbody, nameof(Rigidbody), nameof(EntityController), name);
+        BaseUtils.ValidateCheckNullValue(Movement, nameof(Movement), nameof(EntityController), name);
+        BaseUtils.ValidateCheckNullValue(StateMachine, nameof(StateMachine), nameof(EntityController), name);
     }
 
     protected virtual void Update()
