@@ -30,9 +30,18 @@ public class StateMachine : MonoBehaviour
 
     public void Init(object owner, StateMachineInfo info, Animator animator)
     {
+        var states = transform.Find("States");
+        if (states != null)
+        {
+            DestroyImmediate(states.gameObject);
+        }
+
+        var statesObj = new GameObject("States");
+        statesObj.transform.SetParent(transform);
+
         Owner = owner;
         Animator = animator;
-        UtilsData.AddTypes(info.states, StateList, gameObject);
+        UtilsData.AddStates(info.states, StateList, statesObj.transform);
         State idleState = null;
         foreach (var state in StateList)
         {

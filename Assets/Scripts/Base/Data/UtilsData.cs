@@ -1,18 +1,13 @@
-﻿
-
-using SimpleJSON;
+﻿using SimpleJSON;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
 public static class UtilsData
 {
-
     public static SubInfo GetSubInfo(JSONObject json)
     {
-
         SubInfo subInfo = new SubInfo();
         subInfo.assembly = Assembly.Load(json["assemblyName"]);
         subInfo.type = subInfo.assembly.GetType(json["type"]);
@@ -45,7 +40,7 @@ public static class UtilsData
         return subInfos;
     }
 
-    public static object GetType(SubInfo subInfo, GameObject gameObject = null, Action<object> setDataCallback = null)
+    private static object GetType(SubInfo subInfo, GameObject gameObject = null, Action<object> setDataCallback = null)
     {
         object type;
         if (subInfo.type.IsSubclassOf(typeof(Component)))
@@ -67,10 +62,8 @@ public static class UtilsData
         return type;
     }
 
-
-    public static void AddTypes<T>(SubInfo[] subInfos, List<T> types, GameObject gameObject = null, Action<object> addSubInfoFinishCallback = null) where T : class
+    private static void ClearTypes<T>(List<T> types) where T : class
     {
-
         foreach (var type in types)
         {
             var component = type as Component;
@@ -81,12 +74,18 @@ public static class UtilsData
         }
 
         types.Clear();
-
+    }
+    public static void AddStates<T>(SubInfo[] subInfos, List<T> types, Transform parent, Action<object> addSubInfoFinish = null) where T : class
+    {
+        ClearTypes(types);
         if (subInfos == null) return;
-
         foreach (var subInfo in subInfos)
         {
-            object type = GetType(subInfo, gameObject, addSubInfoFinishCallback);
+            var stateInfo = subInfo.data as StateInfo;
+            GameObject gameObject = new GameObject(stateInfo.stateName);
+            gameObject.transform.SetParent(parent);
+
+            object type = GetType(subInfo, gameObject, addSubInfoFinish);
             var typeT = type as T;
             if (typeT != null)
             {
@@ -94,5 +93,20 @@ public static class UtilsData
             }
         }
     }
+    public static void AddTypes<T>(SubInfo[] subInfos, List<T> types, GameObject gameObject = null, Action<object> addSubInfoFinish = null) where T : class
+    {
+        ClearTypes(types);
 
+        if (subInfos == null) return;
+
+        foreach (var subInfo in subInfos)
+        {
+            object type = GetType(subInfo, gameObject, addSubInfoFinish);
+            var typeT = type as T;
+            if (typeT != null)
+            {
+                types.Add(typeT);
+            }
+        }
+    }
 }

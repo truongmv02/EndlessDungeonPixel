@@ -13,7 +13,7 @@ public class StateInfo
     public SubInfo[] conditions;
 }
 
-public class State : ISetInfo, IComparable<State>
+public class State : MonoBehaviour, ISetInfo
 {
     public int StateID { get; protected set; }
     public int AnimationID { get; protected set; }
@@ -38,14 +38,13 @@ public class State : ISetInfo, IComparable<State>
         this.animator = animator;
         StateMachine = stateMachine;
 
-        UtilsData.AddTypes(StateInfo.conditions, conditions, stateMachine.gameObject, (obj) =>
+        UtilsData.AddTypes(StateInfo.conditions, conditions, gameObject, (obj) =>
         {
             var setOwner = obj as ISetOwner;
             setOwner?.SetOwner(stateMachine.Owner);
         });
 
         NextStates = StateMachine.GetNextStates(this);
-        NextStates.Sort();
         var animationClip = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == StateInfo.stateName);
         animationDuration = animationClip.length;
     }
@@ -97,8 +96,4 @@ public class State : ISetInfo, IComparable<State>
         return true;
     }
 
-    public int CompareTo(State obj)
-    {
-        return order.CompareTo(obj.order);
-    }
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class Condition : ICondition
+public abstract class Condition : MonoBehaviour, ICondition
 {
     protected bool isSuitable = true;
     public virtual bool IsSuitable
