@@ -4,6 +4,8 @@ using System;
 public class WeaponChargeState : State
 {
     Charge charge;
+    BaseStat chargeTime;
+    BaseStat chargeAmount;
     public override void Enter()
     {
         base.Enter();
@@ -28,16 +30,40 @@ public class WeaponChargeState : State
         charge = weapon.GetComponent<Charge>();
         BaseUtils.ValidateCheckNullValue(charge, nameof(charge), nameof(WeaponChargeState), animator.name);
 
-        var chargeTime = stats["ChargeTime"];
+        chargeTime = stats["ChargeTime"];
         if (chargeTime != null)
         {
-            charge.ChargeTime = chargeTime;
+            HandChargeTimeChange(chargeTime.Value);
+            chargeTime.OnValueChange += HandChargeTimeChange;
         }
 
-        var chargeAmount = stats["ChargeAmount"];
+        chargeAmount = stats["ChargeAmount"];
         if (chargeAmount != null)
         {
-            charge.ChargeAmount = chargeAmount;
+            HandChargeAmountChange(chargeAmount.Value);
+            chargeAmount.OnValueChange += HandChargeAmountChange;
+        }
+    }
+
+    public void HandChargeTimeChange(float value)
+    {
+        charge.Info.chargeTime = value;
+    }
+    public void HandChargeAmountChange(float value)
+    {
+        charge.Info.chargeAmount = (int)value;
+    }
+
+    private void OnDestroy()
+    {
+        if (chargeTime != null)
+        {
+            chargeTime.OnValueChange -= HandChargeTimeChange;
+        }
+
+        if (chargeAmount != null)
+        {
+            chargeAmount.OnValueChange -= HandChargeAmountChange;
         }
     }
 }

@@ -15,9 +15,6 @@ public class ChargeInfo
 public class Charge : BaseComponent<ChargeInfo>
 {
     public int CurrentCharge { get; private set; }
-    public BaseStat ChargeTime { get; set; } = new BaseStat();
-    public BaseStat ChargeAmount { get; set; } = new BaseStat() { Value = 1 };
-
     private bool canCharge;
     public float timer;
 
@@ -43,13 +40,13 @@ public class Charge : BaseComponent<ChargeInfo>
     {
         if (!canCharge) return;
         timer += Time.deltaTime;
-        if (timer >= ChargeTime.Value)
+        if (timer >= Info.chargeTime)
         {
-            CurrentCharge = Mathf.Clamp(CurrentCharge + 1, 0, (int)ChargeAmount.Value);
+            CurrentCharge = Mathf.Clamp(CurrentCharge + 1, 0, Info.chargeAmount);
             timer = 0;
             OnCurrentChargeChange?.Invoke(CurrentCharge);
         }
-        if (CurrentCharge == (int)ChargeAmount.Value)
+        if (CurrentCharge == Info.chargeAmount)
         {
             canCharge = false;
         }
@@ -58,8 +55,5 @@ public class Charge : BaseComponent<ChargeInfo>
     public override void SetInfo(object info)
     {
         base.SetInfo(info);
-        CurrentCharge = Info.initialChargeAmount;
-        ChargeAmount.Value = Info.chargeAmount;
-        ChargeTime.Value = Info.chargeTime;
     }
 }
