@@ -44,6 +44,10 @@
         "position": { "x": 0.16, "y": -0.16 },
         "rotation": -45
       }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeProcessing"
     }
   ]
 }

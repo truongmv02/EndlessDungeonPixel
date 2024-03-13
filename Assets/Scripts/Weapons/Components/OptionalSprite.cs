@@ -17,12 +17,10 @@ public class OptionalSprite : BaseComponent<OptionalSpriteInfo>, ISetOwner
     private void Start()
     {
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(OptionalSprite), name);
-        spriteRenderer = weapon.OptionalSprite;
-        spriteRenderer.sprite = Resources.Load<Sprite>(Info.sprite);
-        spriteRenderer.transform.localPosition = Info.position;
-        spriteRenderer.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
-        weapon.AnimationHandler.OnSetActiveOptionalSprite += HandleSetActiveOptionalSprite;
 
+        spriteRenderer = weapon.OptionalSprite;
+        InitInfo();
+        weapon.AnimationHandler.OnSetActiveOptionalSprite += HandleSetActiveOptionalSprite;
     }
 
     public void HandleSetActiveOptionalSprite(bool value)
@@ -39,11 +37,20 @@ public class OptionalSprite : BaseComponent<OptionalSpriteInfo>, ISetOwner
     public override void SetInfo(object info)
     {
         base.SetInfo(info);
-
+        InitInfo();
     }
 
+    private void InitInfo()
+    {
+        if (spriteRenderer)
+        {
+            spriteRenderer.sprite = Resources.Load<Sprite>(Info.sprite);
+            spriteRenderer.transform.localPosition = Info.position;
+            spriteRenderer.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
+        }
+    }
     private void OnDestroy()
     {
-        // weapon.AnimationHandler.OnSetOptionalSpriteActive -= HandleSetOptionalSpriteActive;
+        weapon.AnimationHandler.OnSetActiveOptionalSprite -= HandleSetActiveOptionalSprite;
     }
 }

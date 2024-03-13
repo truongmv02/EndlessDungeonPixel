@@ -16,40 +16,44 @@ public class Charge : BaseComponent<ChargeInfo>
 {
     public int CurrentCharge { get; private set; }
     private bool canCharge;
-    public float timer;
+    public float CurrentChargeTime { get; private set; }
 
     public event Action<int> OnCurrentChargeChange;
 
-    private void Awake()
-    {
-    }
+    public event Action OnStartCharge;
+    public event Action OnStopCharge;
+    public event Action<float, int> OnChargeUpdate;
 
     public void StartCharge()
     {
-        timer = 0;
+        CurrentChargeTime = 0;
         canCharge = true;
+        OnStartCharge?.Invoke();
     }
 
     public void StopCharge()
     {
         CurrentCharge = 0;
         canCharge = false;
+        OnStopCharge?.Invoke();
     }
 
     private void Update()
     {
         if (!canCharge) return;
-        timer += Time.deltaTime;
-        if (timer >= Info.chargeTime)
+        CurrentChargeTime += Time.deltaTime;
+        if (CurrentChargeTime >= Info.chargeTime)
         {
             CurrentCharge = Mathf.Clamp(CurrentCharge + 1, 0, Info.chargeAmount);
-            timer = 0;
+            CurrentChargeTime = 0;
             OnCurrentChargeChange?.Invoke(CurrentCharge);
         }
         if (CurrentCharge == Info.chargeAmount)
         {
             canCharge = false;
         }
+
+        OnChargeUpdate?.Invoke(CurrentChargeTime, CurrentCharge);
     }
 
     public override void SetInfo(object info)
