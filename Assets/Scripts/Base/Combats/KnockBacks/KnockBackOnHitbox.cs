@@ -2,11 +2,11 @@
 using System.Linq;
 using UnityEngine;
 
-public class KnockBackOnHitbox : MonoBehaviour, ISetInfo, ISetKnockBackInfo
+public class KnockBackOnHitbox : KnockBack, ISetInfo
 {
-    [field: SerializeField] public CombatInfo Info { get; set; }
     public event Action OnKnockBack;
-    KnockBackInfo knockBackInfo;
+    [field: SerializeField] public CombatInfo Info { get; set; }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         KnockBack(collision.transform);
@@ -14,22 +14,20 @@ public class KnockBackOnHitbox : MonoBehaviour, ISetInfo, ISetKnockBackInfo
 
     void KnockBack(Transform target)
     {
-        if (!target.TryGetComponent<IKnockBackable>(out var knockBack)) return;
+        if (!target.TryGetComponent<IKnockBackable>(out var knockBack) || knockBackStrength == null) return;
         if (!string.IsNullOrEmpty(Info.objectTags.FirstOrDefault(x => x == target.tag)))
         {
-            knockBackInfo.direction = transform.up;
+            knockBackInfo.strength = knockBackStrength.Value;
+            knockBackInfo.direction = (target.position - transform.position).normalized;
             knockBack.KnockBack(knockBackInfo);
         }
         OnKnockBack?.Invoke();
-    }
-
-    public void SetKnockBackInfo(KnockBackInfo info)
-    {
-        knockBackInfo = info;
     }
 
     public void SetInfo(object info)
     {
         Info = info as CombatInfo;
     }
+
+
 }

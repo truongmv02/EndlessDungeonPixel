@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
 [DisallowMultipleComponent]
 public class DamageReceiver : MonoBehaviour, IDamageable
 {

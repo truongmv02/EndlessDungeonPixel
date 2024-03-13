@@ -2,11 +2,10 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class DamageOnHitbox : MonoBehaviour, ISetInfo, ISetDamageInfo
+public class DamageOnHitbox : Damage, ISetInfo
 {
-    [field: SerializeField] public CombatInfo Info { get; set; }
     public event Action OnDamage;
-    DamageInfo damageInfo;
+    [field: SerializeField] public CombatInfo Info { get; set; }
     private void Start()
     {
 
@@ -19,17 +18,13 @@ public class DamageOnHitbox : MonoBehaviour, ISetInfo, ISetDamageInfo
 
     void Damage(Transform target)
     {
-        if (!target.TryGetComponent<IDamageable>(out var damageable)) return;
+        if (!target.TryGetComponent<IDamageable>(out var damageable) || damage == null) return;
         if (!string.IsNullOrEmpty(Info.objectTags.FirstOrDefault(x => x == target.tag)))
         {
+            damageInfo.amount = damage.Value;
             damageable.Damage(damageInfo);
         }
         OnDamage?.Invoke();
-    }
-
-    public void SetDamageInfo(DamageInfo info)
-    {
-        damageInfo = info;
     }
 
     public void SetInfo(object info)
