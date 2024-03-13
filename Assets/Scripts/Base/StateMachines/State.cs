@@ -15,17 +15,17 @@ public class StateInfo
 
 public class State : MonoBehaviour, ISetInfo
 {
-    public int StateID { get; protected set; }
-    public int AnimationID { get; protected set; }
-    public StateInfo StateInfo { get; protected set; }
-    public float StartTime { protected set; get; }
-    protected float animationDuration;
-    protected int order;
-
-    public StateMachine StateMachine { set; get; }
-    protected Animator animator;
     public List<State> NextStates { set; get; } = new List<State>();
     public List<ICondition> conditions = new List<ICondition>();
+
+    protected Animator animator;
+    public int StateID { get; protected set; }
+    public int AnimationID { get; protected set; }
+    public float StartTime { protected set; get; }
+    protected float animationDuration;
+    public StateInfo StateInfo { get; protected set; }
+    public StateMachine StateMachine { set; get; }
+    public Stats Stats { set; get; }
 
     public void SetInfo(object info)
     {
@@ -37,19 +37,13 @@ public class State : MonoBehaviour, ISetInfo
     {
         this.animator = animator;
         StateMachine = stateMachine;
-
+        this.Stats = stats;
         UtilsData.AddTypes(StateInfo.conditions, conditions, gameObject, (obj) =>
         {
             var setOwner = obj as ISetOwner;
             setOwner?.SetOwner(stateMachine.Owner);
-            var countDownCondition = obj as CountDownCondition;
-            if (countDownCondition != null)
-            {
-                BaseUtils.ValidateCheckNullValue(stats, nameof(stats), nameof(State) + " Init Method", name);
-                countDownCondition.Cooldown = stats["Cooldown"];
-                BaseUtils.ValidateCheckNullValue(countDownCondition.Cooldown, nameof(countDownCondition.Cooldown), nameof(State) + " Init Method", name);
-
-            }
+            ISetStats setStats = obj as ISetStats;
+            setStats?.SetStats(stats);
         });
 
         NextStates = StateMachine.GetNextStates(this);

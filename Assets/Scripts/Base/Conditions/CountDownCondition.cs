@@ -5,7 +5,7 @@ public class CountDownInfo
 {
     public bool startValue = true;
 }
-public class CountDownCondition : Condition<CountDownInfo>
+public class CountDownCondition : Condition<CountDownInfo>, ISetStats
 {
     public BaseStat Cooldown { get; set; }
     private float timer;
@@ -34,5 +34,11 @@ public class CountDownCondition : Condition<CountDownInfo>
     {
         base.SetInfo(info);
         isSuitable = this.info.startValue;
+    }
+
+    public void SetStats(Stats stats)
+    {
+        Cooldown = stats["Cooldown"];
+        BaseUtils.ValidateCheckNullValue(Cooldown, nameof(Cooldown), nameof(CountDownCondition), name);
     }
 }

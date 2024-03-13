@@ -14,6 +14,10 @@ public class WeaponChargeState : State
     {
         base.Exit();
         charge.StopCharge();
+        foreach (var condition in conditions)
+        {
+            condition.ResetCondition();
+        }
     }
 
     public override void Init(StateMachine stateMachine, Animator animator, Stats stats)
@@ -23,5 +27,17 @@ public class WeaponChargeState : State
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(WeaponChargeState), animator.name);
         charge = weapon.GetComponent<Charge>();
         BaseUtils.ValidateCheckNullValue(charge, nameof(charge), nameof(WeaponChargeState), animator.name);
+
+        var chargeTime = stats["ChargeTime"];
+        if (chargeTime != null)
+        {
+            charge.ChargeTime = chargeTime;
+        }
+
+        var chargeAmount = stats["ChargeAmount"];
+        if (chargeAmount != null)
+        {
+            charge.ChargeAmount = chargeAmount;
+        }
     }
 }

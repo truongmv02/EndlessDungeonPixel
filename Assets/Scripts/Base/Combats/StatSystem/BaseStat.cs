@@ -16,6 +16,7 @@ public class StatInfo
     public float value;
 }
 
+[System.Serializable]
 public class BaseStat
 {
     [field: SerializeField] public string StatName { get; set; }

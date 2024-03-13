@@ -5,7 +5,18 @@ using UnityEngine;
 public class Stats
 {
     Dictionary<string, BaseStat> stat_dict = new Dictionary<string, BaseStat>();
-    public BaseStat this[string stat] => stat_dict[stat];
+    public BaseStat this[string stat]
+    {
+        get
+        {
+            if (!stat_dict.ContainsKey(stat))
+            {
+                return null;
+            }
+            return stat_dict[stat];
+        }
+    }
+
 
     public void Init(BaseStat[] stats)
     {
