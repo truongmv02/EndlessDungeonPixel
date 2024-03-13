@@ -20,7 +20,7 @@ public class MovementCondition : Condition<MovementConditionInfo>
     public override void SetInfo(object info)
     {
         base.SetInfo(info);
-        state = Enum.Parse<MovementState>(this.info.state);
+        state = Enum.Parse<MovementState>(Info.state);
     }
 
 

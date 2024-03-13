@@ -40,11 +40,11 @@ public abstract class Condition : MonoBehaviour, ICondition
 }
 
 
-public abstract class Condition<T> : Condition, ISetInfo
+public abstract class Condition<T> : Condition, ISetInfo where T : class, new()
 {
-    protected T info;
+    protected T Info { set; get; } = new T();
     public virtual void SetInfo(object info)
     {
-        this.info = (T)info;
+        Info = (T)info;
     }
 }

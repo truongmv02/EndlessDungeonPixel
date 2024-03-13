@@ -3,12 +3,13 @@
 [System.Serializable]
 public class CountDownInfo
 {
+    public float timeCountDown;
     public bool startValue = true;
 }
 public class CountDownCondition : Condition<CountDownInfo>, ISetStats
 {
-    public BaseStat Cooldown { get; set; }
     private float timer;
+    BaseStat cooldown;
     private void Start()
     {
     }
@@ -17,7 +18,7 @@ public class CountDownCondition : Condition<CountDownInfo>, ISetStats
     {
         if (isSuitable) return;
         timer += Time.deltaTime;
-        if (timer >= Cooldown.Value)
+        if (timer >= Info.timeCountDown)
         {
             SuitableCondition(true);
             timer = 0;
@@ -33,12 +34,27 @@ public class CountDownCondition : Condition<CountDownInfo>, ISetStats
     public override void SetInfo(object info)
     {
         base.SetInfo(info);
-        isSuitable = this.info.startValue;
+        isSuitable = Info.startValue;
     }
 
     public void SetStats(Stats stats)
     {
-        Cooldown = stats["Cooldown"];
-        BaseUtils.ValidateCheckNullValue(Cooldown, nameof(Cooldown), nameof(CountDownCondition), name);
+        cooldown = stats["Cooldown"];
+        if (cooldown != null)
+        {
+            HandleCooldownChange(cooldown.Value);
+            cooldown.OnValueChange += HandleCooldownChange;
+        }
+    }
+
+    private void HandleCooldownChange(float value)
+    {
+        Info.timeCountDown = value;
+    }
+
+    private void OnDestroy()
+    {
+        if (cooldown != null)
+            cooldown.OnValueChange -= HandleCooldownChange;
     }
 }

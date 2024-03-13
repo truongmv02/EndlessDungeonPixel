@@ -13,7 +13,7 @@ public class InputCondition : Condition<InputInfo>, ISetOwner
 
     protected override void CheckCondition()
     {
-        SuitableCondition(input.GetInput() == info.inputValue);
+        SuitableCondition(input.GetInput() == Info.inputValue);
     }
 
     public void SetOwner(object owner)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RootComponent<T> : BaseComponent<T>
+public class RootComponent<T> : BaseComponent<T> where T : class, new()
 {
 
     protected List<Component> components = new List<Component>();

@@ -12,13 +12,13 @@ public class ChargeCondition : Condition<ChargeConditionInfo>, ISetOwner
 
     protected override void CheckCondition()
     {
-        if (info.chargeAmountMin == 0)
+        if (Info.chargeAmountMin == 0)
         {
             SuitableCondition(charge.CurrentCharge == 0);
         }
         else
         {
-            SuitableCondition(charge.CurrentCharge >= info.chargeAmountMin);
+            SuitableCondition(charge.CurrentCharge >= Info.chargeAmountMin);
         }
     }
 

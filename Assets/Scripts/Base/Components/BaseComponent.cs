@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseComponent<T> : MonoBehaviour, ISetInfo
+public class BaseComponent<T> : MonoBehaviour, ISetInfo where T : class, new()
 {
-    public virtual T Info { set; get; }
+    public virtual T Info { set; get; } = new T();
     public virtual void SetInfo(object info)
     {
         Info = (T)info;
