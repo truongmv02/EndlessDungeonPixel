@@ -33,7 +33,7 @@ public class State : MonoBehaviour, ISetInfo
         StateID = Animator.StringToHash(StateInfo.stateName);
         AnimationID = Animator.StringToHash(StateInfo.animationName);
     }
-    public virtual void Init(StateMachine stateMachine, Animator animator)
+    public virtual void Init(StateMachine stateMachine, Animator animator, Stats stats)
     {
         this.animator = animator;
         StateMachine = stateMachine;
@@ -42,6 +42,14 @@ public class State : MonoBehaviour, ISetInfo
         {
             var setOwner = obj as ISetOwner;
             setOwner?.SetOwner(stateMachine.Owner);
+            var countDownCondition = obj as CountDownCondition;
+            if (countDownCondition != null)
+            {
+                BaseUtils.ValidateCheckNullValue(stats, nameof(stats), nameof(State) + " Init Method", name);
+                countDownCondition.Cooldown = stats["Cooldown"];
+                BaseUtils.ValidateCheckNullValue(countDownCondition.Cooldown, nameof(countDownCondition.Cooldown), nameof(State) + " Init Method", name);
+
+            }
         });
 
         NextStates = StateMachine.GetNextStates(this);

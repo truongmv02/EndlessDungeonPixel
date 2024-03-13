@@ -23,7 +23,7 @@ public class PlayerController : EntityController
         Stats.Init(DataManager.Instance.PlayerStats.GetStats("Arthur Pendragon"));
         Movement.Speed = Stats["Speed"];
         var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo("base");
-        StateMachine.Init(this, stateMachineInfo, Animator);
+        StateMachine.Init(this, stateMachineInfo, Animator, Stats);
     }
 
     protected override void Update()

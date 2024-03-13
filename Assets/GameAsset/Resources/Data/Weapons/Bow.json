@@ -46,7 +46,7 @@
       "typeInfo": "OptionalSpriteInfo",
       "data": {
         "sprite": "Sprites/Bullet/arrow",
-        "position": { "x": 0, "y": 0 },
+        "position": { "x": 0.16, "y": -0.16 },
         "rotation": -45
       }
     }

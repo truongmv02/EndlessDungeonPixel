@@ -6,7 +6,7 @@ using UnityEngine;
 public class OptionalSpriteInfo
 {
     public string sprite;
-    public Vector2 postion;
+    public Vector2 position;
     public float rotation;
 }
 
@@ -19,7 +19,7 @@ public class OptionalSprite : BaseComponent<OptionalSpriteInfo>, ISetOwner
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(OptionalSprite), name);
         spriteRenderer = weapon.OptionalSprite;
         spriteRenderer.sprite = Resources.Load<Sprite>(Info.sprite);
-        spriteRenderer.transform.localPosition = Info.postion;
+        spriteRenderer.transform.localPosition = Info.position;
         spriteRenderer.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
         weapon.AnimationHandler.OnSetActiveOptionalSprite += HandleSetActiveOptionalSprite;
 

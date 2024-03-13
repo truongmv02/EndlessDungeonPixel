@@ -16,9 +16,9 @@ public class WeaponChargeState : State
         charge.StopCharge();
     }
 
-    public override void Init(StateMachine stateMachine, Animator animator)
+    public override void Init(StateMachine stateMachine, Animator animator, Stats stats)
     {
-        base.Init(stateMachine, animator);
+        base.Init(stateMachine, animator, stats);
         WeaponController weapon = stateMachine.Owner as WeaponController;
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(WeaponChargeState), animator.name);
         charge = weapon.GetComponent<Charge>();

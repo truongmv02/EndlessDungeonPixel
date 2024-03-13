@@ -14,9 +14,9 @@ public class PlayerRunState : State
         movement.Move(moveDirection);
     }
 
-    public override void Init(StateMachine stateMachine, Animator animator)
+    public override void Init(StateMachine stateMachine, Animator animator, Stats stats)
     {
-        base.Init(stateMachine, animator);
+        base.Init(stateMachine, animator, stats);
         PlayerController player = stateMachine.Owner as PlayerController;
         BaseUtils.ValidateCheckNullValue(player, nameof(player), nameof(PlayerRunState), animator.name);
         movement = player.Movement;

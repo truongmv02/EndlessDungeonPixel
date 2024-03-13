@@ -28,7 +28,7 @@ public class StateMachine : MonoBehaviour
         CurrentStaste?.PhysicsUpdate();
     }
 
-    public void Init(object owner, StateMachineInfo info, Animator animator)
+    public void Init(object owner, StateMachineInfo info, Animator animator, Stats stats)
     {
         Owner = owner;
         Animator = animator;
@@ -48,7 +48,7 @@ public class StateMachine : MonoBehaviour
 
         foreach (var state in StateList)
         {
-            state.Init(this, animator);
+            state.Init(this, animator, stats);
             if (state.StateInfo.stateName == "Idle") idleState = state;
         }
         ChangeState(idleState);

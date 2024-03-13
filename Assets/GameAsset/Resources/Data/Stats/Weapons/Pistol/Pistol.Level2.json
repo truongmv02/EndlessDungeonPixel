@@ -2,15 +2,15 @@
   "stats": [
     {
       "statName": "Cooldown",
-      "value": 1
+      "value": 0.5
     },
     {
       "statName": "Damage",
-      "value": 3
+      "value": 5
     },
     {
       "statName": "KnockBackStrength",
-      "value": 5
+      "value": 10
     }
   ]
 }

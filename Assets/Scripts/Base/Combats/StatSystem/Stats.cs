@@ -11,7 +11,14 @@ public class Stats
     {
         foreach (var stat in stats)
         {
-            stat_dict.Add(stat.StatName, stat);
+            if (stat_dict.ContainsKey(stat.StatName))
+            {
+                stat_dict[stat.StatName].Value = stat.Value;
+            }
+            else
+            {
+                stat_dict.Add(stat.StatName, stat);
+            }
         }
     }
 

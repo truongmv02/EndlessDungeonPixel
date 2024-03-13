@@ -20,6 +20,7 @@ public class WeaponInfo
 public class WeaponController : RootComponent<WeaponInfo>, IGetInput
 {
     public string weaponName;
+    public int level;
     public StateMachine StateMachine { get; protected set; }
     public bool Input { protected get; set; }
     public Transform AttackPoint { set; get; }
@@ -35,6 +36,12 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     {
         SetInfo(DataManager.Instance.WeaponDatas.GetInfo(weaponName));
     }
+    [ContextMenu("Level Up")]
+    public void LevelUp()
+    {
+        Stats.Init(DataManager.Instance.WeaponStats.GetStats(Info.stats, level));
+    }
+
     public bool GetInput()
     {
         return Input;
@@ -61,7 +68,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         });
 
         StateMachineInfo stateInfo = DataManager.Instance.WeaponStateMachine.GetInfo(Info.stateMachine);
-        StateMachine.Init(this, stateInfo, Animator);
+        StateMachine.Init(this, stateInfo, Animator, Stats);
     }
 
     private void Awake()
@@ -80,7 +87,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         BaseUtils.ValidateCheckNullValue(OptionalSprite, nameof(OptionalSprite), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(AttackPoint, nameof(AttackPoint), nameof(WeaponController), name);
 
-        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Bow"));
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Pistol"));
     }
 
 }

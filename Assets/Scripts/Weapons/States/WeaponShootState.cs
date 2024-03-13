@@ -24,9 +24,9 @@ public class WeaponShootState : State
         }
     }
 
-    public override void Init(StateMachine stateMachine, Animator animator)
+    public override void Init(StateMachine stateMachine, Animator animator, Stats stats)
     {
-        base.Init(stateMachine, animator);
+        base.Init(stateMachine, animator, stats);
         weapon = (WeaponController)stateMachine.Owner;
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(WeaponShootState), animator.name);
         addObjectHandle = weapon.GetComponent<AddObjectHandle>();
