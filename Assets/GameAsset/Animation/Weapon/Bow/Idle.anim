@@ -23,7 +23,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 956d06e833ba05f43bd60710a3a1556f, type: 3}
     attribute: m_Sprite
-    path: WeaponSprite
+    path: Root/WeaponRotation/WeaponSprite
     classID: 212
     script: {fileID: 0}
     flags: 2

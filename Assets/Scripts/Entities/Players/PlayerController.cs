@@ -39,7 +39,7 @@ public class PlayerController : EntityController
         float degrees = radians * Mathf.Rad2Deg;
         float dir = playerDirection.x >= 0f ? 1f : -1f;
         float x = (playerDirection.x < 0f) ? 180 : 0;
-        weapon.transform.localEulerAngles = new Vector3(x, x, degrees * dir);
+        weapon.Root.localEulerAngles = new Vector3(x, x, degrees * dir);
 
         weapon.Input = Input.GetMouseButton(0);
 

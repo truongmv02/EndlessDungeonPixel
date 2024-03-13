@@ -39,7 +39,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: WeaponSprite
+    path: Root/WeaponRotation/WeaponSprite
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
@@ -50,7 +50,7 @@ AnimationClip:
     - time: 0.1
       value: {fileID: 21300000, guid: 2b57c45850712514f95e8c7a10097e73, type: 3}
     attribute: m_Sprite
-    path: WeaponSprite
+    path: Root/WeaponRotation/WeaponSprite
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -129,7 +129,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: WeaponSprite
+    path: Root/WeaponRotation/WeaponSprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -159,7 +159,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: WeaponSprite
+    path: Root/WeaponRotation/WeaponSprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -189,7 +189,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: WeaponSprite
+    path: Root/WeaponRotation/WeaponSprite
     classID: 4
     script: {fileID: 0}
     flags: 0

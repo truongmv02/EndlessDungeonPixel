@@ -10,7 +10,7 @@ public class WeaponShootState : State
     {
         base.Enter();
         addObjectHandle.Position = weapon.AttackPoint.position;
-        addObjectHandle.Direction = weapon.transform.right;
+        addObjectHandle.Direction = weapon.AttackPoint.right;
         addObjectHandle.Handle();
     }
 

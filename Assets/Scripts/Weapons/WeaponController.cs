@@ -30,6 +30,8 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     public Animator Animator { get; protected set; }
     public WeaponAnimationEventHandler AnimationHandler { get; protected set; }
     public Stats Stats { get; protected set; } = new Stats();
+    public Transform Root { get; protected set; }
+    public Transform WeaponRotation { get; protected set; }
 
     [ContextMenu("Init Weapon")]
     public void Init()
@@ -51,7 +53,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     {
         base.SetInfo(info);
         OptionalSprite.enabled = false;
-        transform.localPosition = Info.position;
+        Root.transform.localPosition = Info.position;
         Animator.runtimeAnimatorController = Info.runtimeAnimatorController;
         WeaponSprite.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
         AttackPoint.localPosition = Info.attackPosition;
@@ -76,9 +78,11 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         Animator = GetComponent<Animator>();
         StateMachine = GetComponentInChildren<StateMachine>();
         AnimationHandler = GetComponent<WeaponAnimationEventHandler>();
-        WeaponSprite = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
+        Root = transform.Find("Root");
+        WeaponRotation = Root.Find("WeaponRotation");
+        WeaponSprite = WeaponRotation.Find("WeaponSprite").GetComponent<SpriteRenderer>();
+        AttackPoint = WeaponRotation.Find("AttackPosition");
         OptionalSprite = GetComponentInChildren<OptionalSpriteMarket>().SpriteRenderer;
-        AttackPoint = transform.Find("AttackPosition");
 
         BaseUtils.ValidateCheckNullValue(Animator, nameof(Animator), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(StateMachine, nameof(StateMachine), nameof(WeaponController), name);
@@ -87,7 +91,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         BaseUtils.ValidateCheckNullValue(OptionalSprite, nameof(OptionalSprite), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(AttackPoint, nameof(AttackPoint), nameof(WeaponController), name);
 
-        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Bow"));
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Sword"));
     }
 
 }
