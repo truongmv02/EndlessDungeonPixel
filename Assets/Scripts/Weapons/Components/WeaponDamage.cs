@@ -15,5 +15,4 @@ public class WeaponDamage : MonoBehaviour, ISetStats
         damageOnHitbox = GetComponentInChildren<DamageOnHitbox>();
         damageOnHitbox.SetStats(stats);
     }
-
 }

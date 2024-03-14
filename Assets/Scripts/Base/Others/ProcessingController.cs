@@ -23,10 +23,22 @@ public class ProcessingController : MonoBehaviour
     }
     private void Awake()
     {
-        BackgroundSpriteRenderer = GetComponent<SpriteRenderer>();
+        BackgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
         HandleSpriteRenderer = transform.Find("Handle").GetComponent<SpriteRenderer>();
     }
 
+    private void Update()
+    {
+        bool flip = transform.rotation.y < 0 ? true : false;
+        if (flip)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
 
     public void Hide()
     {
