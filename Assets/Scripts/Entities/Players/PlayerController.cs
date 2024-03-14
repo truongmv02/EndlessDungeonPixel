@@ -20,7 +20,7 @@ public class PlayerController : EntityController
 
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(PlayerController), name);
 
-        Stats.Init(DataManager.Instance.PlayerStats.GetStats("Arthur Pendragon"));
+        Stats.Init(DataManager.Instance.PlayerStats.GetStats("ArthurPendragonStats"));
         Movement.Speed = Stats["Speed"];
         var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo("base");
         StateMachine.Init(this, stateMachineInfo, Animator, Stats);
@@ -42,6 +42,7 @@ public class PlayerController : EntityController
         weapon.Root.localEulerAngles = new Vector3(x, x, degrees * dir);
 
         weapon.Input = Input.GetMouseButton(0);
+
 
     }
 }

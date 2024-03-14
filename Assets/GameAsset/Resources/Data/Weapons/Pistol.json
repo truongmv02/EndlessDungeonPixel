@@ -3,8 +3,8 @@
   "attackPosition": { "x": 0.64, "y": 0.18 },
   "rotation": 0,
   "runtimeAnimatorController": "AnimatorController/Weapon/PistolAC",
-  "stats": "Pistol",
-  "stateMachine": "Pistol",
+  "stats": "PistolStats",
+  "stateMachine": "PistolStateMachine",
   "components": [
     {
       "assemblyName": "Assembly-CSharp",

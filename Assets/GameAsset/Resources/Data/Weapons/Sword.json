@@ -1,8 +1,32 @@
 {
   "position": { "x": 0.4, "y": 0.45 },
-  "attackPosition": { "x": 0.3, "y": 0.02 },
-  "rotation": -20,
+  "rotation": -90,
+  "attackPosition": { "x": 0, "y": 0 },
+  "attackPointRotation": -90,
+  "isActiveHitbox": true,
+  "hitbox": {
+    "points": [
+      { "x": -0.2784029245376587, "y": 0.42873045802116396 },
+      { "x": -0.5212694406509399, "y": 0.6731286644935608 },
+      { "x": -0.48560193181037905, "y": 1.2428009510040284 },
+      { "x": 0.5712038278579712, "y": 1.2428014278411866 },
+      { "x": 0.5426698327064514, "y": 0.6945289969444275 },
+      { "x": 0.2998034358024597, "y": 0.4501310884952545 },
+      { "x": 0.15000000596046449, "y": 0.0 },
+      { "x": -0.15000000596046449, "y": 0.0 }
+    ]
+  },
   "runtimeAnimatorController": "AnimatorController/Weapon/SwordAC",
-  "stats": "Sword",
-  "stateMachine": "Sword"
+  "stats": "SwordStats",
+  "stateMachine": "SwordStateMachine",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponDamage"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponKnockBack"
+    }
+  ]
 }

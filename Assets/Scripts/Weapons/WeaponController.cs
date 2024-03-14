@@ -3,12 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PointPolygon2D
+{
+    public Vector2[] points;
+}
+
 [Serializable]
 public class WeaponInfo
 {
     public Vector2 position;
-    public Vector2 attackPosition;
     public float rotation;
+    public bool isActiveHitbox;
+    public Vector2 attackPosition;
+    public float attackPointRotation;
+    public PointPolygon2D hitbox;
     public RuntimeAnimatorController runtimeAnimatorController;
     public string stats;
     public string stateMachine;
@@ -32,6 +41,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     public Stats Stats { get; protected set; } = new Stats();
     public Transform Root { get; protected set; }
     public Transform WeaponRotation { get; protected set; }
+    PolygonCollider2D hitbox;
 
     [ContextMenu("Init Weapon")]
     public void Init()
@@ -57,6 +67,10 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         Animator.runtimeAnimatorController = Info.runtimeAnimatorController;
         WeaponSprite.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
         AttackPoint.localPosition = Info.attackPosition;
+        AttackPoint.localEulerAngles = new Vector3(0f, 0f, Info.attackPointRotation);
+
+        hitbox.enabled = Info.isActiveHitbox;
+        hitbox.points = Info.hitbox?.points;
 
         Stats.Clear();
         Stats.Init(DataManager.Instance.WeaponStats.GetStats(Info.stats));
@@ -78,18 +92,26 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         Animator = GetComponent<Animator>();
         StateMachine = GetComponentInChildren<StateMachine>();
         AnimationHandler = GetComponent<WeaponAnimationEventHandler>();
+
         Root = transform.Find("Root");
         WeaponRotation = Root.Find("WeaponRotation");
         WeaponSprite = WeaponRotation.Find("WeaponSprite").GetComponent<SpriteRenderer>();
         AttackPoint = WeaponRotation.Find("AttackPosition");
         OptionalSprite = GetComponentInChildren<OptionalSpriteMarket>().SpriteRenderer;
+        hitbox = AttackPoint.GetComponent<PolygonCollider2D>();
+
+        // Debug.Log(JsonUtility.ToJson(new PointPolygon2D() { points = hitbox.points }));
 
         BaseUtils.ValidateCheckNullValue(Animator, nameof(Animator), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(StateMachine, nameof(StateMachine), nameof(WeaponController), name);
-        BaseUtils.ValidateCheckNullValue(StateMachine, nameof(StateMachine), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(AnimationHandler, nameof(AnimationHandler), nameof(WeaponController), name);
-        BaseUtils.ValidateCheckNullValue(OptionalSprite, nameof(OptionalSprite), nameof(WeaponController), name);
+
+        BaseUtils.ValidateCheckNullValue(Root, nameof(Root), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(WeaponRotation, nameof(WeaponRotation), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(WeaponSprite, nameof(WeaponSprite), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(AttackPoint, nameof(AttackPoint), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(OptionalSprite, nameof(OptionalSprite), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(hitbox, nameof(hitbox), nameof(WeaponController), name);
 
         SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Sword"));
     }

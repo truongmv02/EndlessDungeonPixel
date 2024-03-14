@@ -13,9 +13,9 @@
     public virtual void LoadData()
     {
         WeaponDatas = new WeaponData();
-        WeaponStateMachine = new StateMachineData("Weapons");
-        PlayerStateMachine = new StateMachineData("Players");
-        WeaponStats = new StatDatas("Weapons");
-        PlayerStats = new StatDatas("Players");
+        WeaponStateMachine = new StateMachineData("WeaponStateMachine");
+        PlayerStateMachine = new StateMachineData("PlayerStateMachine");
+        WeaponStats = new StatDatas("WeaponStat");
+        PlayerStats = new StatDatas("PlayerStat");
     }
 }
