@@ -2,7 +2,7 @@
   "stats": [
     {
       "statName": "Cooldown",
-      "value": 1
+      "value": 0.1
     },
     {
       "statName": "Damage",
