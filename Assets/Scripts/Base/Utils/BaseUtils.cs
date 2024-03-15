@@ -10,4 +10,18 @@ public static class BaseUtils
             Debug.Log($"{filedName} is null in {component}({objName})");
         }
     }
+
+    public static Sprite LoadSprite(string[] spritePath)
+    {
+        if (spritePath.Length == 0) return null;
+        if (spritePath.Length == 1)
+            return Resources.Load<Sprite>(spritePath[0]);
+        var sprites = Resources.LoadAll<Sprite>(spritePath[0]);
+        foreach (var sprite in sprites)
+        {
+            if (sprite.name == spritePath[1]) return sprite;
+        }
+
+        return null;
+    }
 }

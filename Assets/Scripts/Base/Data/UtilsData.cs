@@ -69,7 +69,7 @@ public static class UtilsData
             var component = type as Component;
             if (component)
             {
-                GameObject.DestroyImmediate(component);
+                GameObject.Destroy(component);
             }
         }
 

@@ -13,6 +13,7 @@ TagManager:
   - MinimapTilemap
   - WalkableTilemap
   - Enemy
+  - ItemPickup
   layers:
   - Default
   - TransparentFX
@@ -30,8 +31,8 @@ TagManager:
   - EnemyTakeDamage
   - PlayerDamage
   - EnemyDamage
-  - 
-  - 
+  - Item
+  - Obstacle
   - 
   - 
   - 

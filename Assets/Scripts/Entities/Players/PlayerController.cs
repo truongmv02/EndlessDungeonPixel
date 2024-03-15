@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using System.Data.SqlTypes;
 
 [Serializable]
 public class PlayerInfo
@@ -11,15 +12,14 @@ public class PlayerInfo
 
 public class PlayerController : EntityController
 {
-    WeaponController weapon;
-
+    Inventory inventory;
     protected override void Awake()
     {
         base.Awake();
-        weapon = GetComponentInChildren<WeaponController>();
+        inventory = GetComponent<Inventory>();
+        BaseUtils.ValidateCheckNullValue(inventory, nameof(inventory), nameof(PlayerController), name);
 
-        BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(PlayerController), name);
-
+        TargetDetector.SetInfo(DataManager.Instance.DetectorData.GetInfo("PlayerDetector"));
         Stats.Init(DataManager.Instance.PlayerStats.GetStats("ArthurPendragonStats"));
         Movement.Speed = Stats["Speed"];
         var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo("base");
@@ -29,6 +29,14 @@ public class PlayerController : EntityController
     protected override void Update()
     {
         base.Update();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            inventory.SwitchWeapon();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TargetDetector.GetTarget()?.GetComponent<ItemPickupController>()?.Collect(this);
+        }
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
@@ -39,10 +47,9 @@ public class PlayerController : EntityController
         float degrees = radians * Mathf.Rad2Deg;
         float dir = playerDirection.x >= 0f ? 1f : -1f;
         float x = (playerDirection.x < 0f) ? 180 : 0;
-        weapon.Root.localEulerAngles = new Vector3(x, x, degrees * dir);
+        inventory.Weapon.Root.localEulerAngles = new Vector3(x, x, degrees * dir);
 
-        weapon.Input = Input.GetMouseButton(0);
-
-
+        inventory.Weapon.Input = Input.GetMouseButton(0);
     }
+
 }

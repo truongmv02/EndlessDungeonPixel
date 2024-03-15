@@ -3,9 +3,11 @@ using System;
 
 public class WeaponChargeState : State
 {
+    WeaponController weapon;
     Charge charge;
     BaseStat chargeTime;
     BaseStat chargeAmount;
+
     public override void Enter()
     {
         base.Enter();
@@ -25,19 +27,20 @@ public class WeaponChargeState : State
     public override void Init(StateMachine stateMachine, Animator animator, Stats stats)
     {
         base.Init(stateMachine, animator, stats);
-        WeaponController weapon = stateMachine.Owner as WeaponController;
+        weapon = stateMachine.Owner as WeaponController;
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(WeaponChargeState), animator.name);
-        charge = weapon.GetComponent<Charge>();
+
+        charge = weapon.GetBaseComponent<Charge>();
         BaseUtils.ValidateCheckNullValue(charge, nameof(charge), nameof(WeaponChargeState), animator.name);
 
-        chargeTime = stats["ChargeTime"];
+        chargeTime = Stats["ChargeTime"];
         if (chargeTime != null)
         {
             HandChargeTimeChange(chargeTime.Value);
             chargeTime.OnValueChange += HandChargeTimeChange;
         }
 
-        chargeAmount = stats["ChargeAmount"];
+        chargeAmount = Stats["ChargeAmount"];
         if (chargeAmount != null)
         {
             HandChargeAmountChange(chargeAmount.Value);

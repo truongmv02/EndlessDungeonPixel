@@ -36,7 +36,7 @@ public class StateMachine : MonoBehaviour
         var states = transform.Find("States");
         if (states != null)
         {
-            DestroyImmediate(states.gameObject);
+            Destroy(states.gameObject);
         }
 
         var statesObj = new GameObject("States");

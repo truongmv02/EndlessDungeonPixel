@@ -2,6 +2,8 @@
   "position": { "x": 0.122, "y": 0.3 },
   "attackPosition": { "x": 0.64, "y": 0.18 },
   "rotation": 0,
+  "sprite": ["Sprites/Weapon/Pistol"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
   "runtimeAnimatorController": "AnimatorController/Weapon/PistolAC",
   "stats": "PistolStats",
   "stateMachine": "PistolStateMachine",

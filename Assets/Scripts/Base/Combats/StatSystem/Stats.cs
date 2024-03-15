@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats
+public class Stats : MonoBehaviour
 {
     Dictionary<string, BaseStat> stat_dict = new Dictionary<string, BaseStat>();
     public BaseStat this[string stat]

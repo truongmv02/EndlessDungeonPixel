@@ -5,6 +5,7 @@
     public WeaponData WeaponDatas { private set; get; }
     public StatDatas WeaponStats { private set; get; }
     public StatDatas PlayerStats { private set; get; }
+    public DetectorData DetectorData { private set; get; }
 
     public DataManager()
     {
@@ -17,5 +18,6 @@
         PlayerStateMachine = new StateMachineData("PlayerStateMachine");
         WeaponStats = new StatDatas("WeaponStat");
         PlayerStats = new StatDatas("PlayerStat");
+        DetectorData = new DetectorData();
     }
 }

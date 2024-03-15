@@ -16,6 +16,8 @@
       { "x": -0.15000000596046449, "y": 0.0 }
     ]
   },
+  "sprite": ["Sprites/Weapon/weapons", "weapons_12"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
   "runtimeAnimatorController": "AnimatorController/Weapon/SwordAC",
   "stats": "SwordStats",
   "stateMachine": "SwordStateMachine",

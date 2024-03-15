@@ -29,7 +29,7 @@ public class WeaponShootState : State
         base.Init(stateMachine, animator, stats);
         weapon = (WeaponController)stateMachine.Owner;
         BaseUtils.ValidateCheckNullValue(weapon, nameof(weapon), nameof(WeaponShootState), animator.name);
-        addObjectHandle = weapon.GetComponent<AddObjectHandle>();
+        addObjectHandle = weapon.GetBaseComponent<AddObjectHandle>();
         BaseUtils.ValidateCheckNullValue(addObjectHandle, nameof(addObjectHandle), nameof(WeaponShootState), animator.name);
     }
 }

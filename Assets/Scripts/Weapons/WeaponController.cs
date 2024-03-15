@@ -10,7 +10,7 @@ public class PointPolygon2D
 }
 
 [Serializable]
-public class WeaponInfo
+public class WeaponInfo : BaseInfo
 {
     public Vector2 position;
     public float rotation;
@@ -38,7 +38,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
     public EntityController Owner { get; set; }
     public Animator Animator { get; protected set; }
     public WeaponAnimationEventHandler AnimationHandler { get; protected set; }
-    public Stats Stats { get; protected set; } = new Stats();
+    public Stats Stats { get; protected set; }
     public Transform Root { get; protected set; }
     public Transform WeaponRotation { get; protected set; }
     PolygonCollider2D hitbox;
@@ -68,7 +68,6 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         WeaponSprite.transform.localEulerAngles = new Vector3(0f, 0f, Info.rotation);
         AttackPoint.localPosition = Info.attackPosition;
         AttackPoint.localEulerAngles = new Vector3(0f, 0f, Info.attackPointRotation);
-
         hitbox.enabled = Info.isActiveHitbox;
         hitbox.points = Info.hitbox?.points;
 
@@ -98,8 +97,8 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         WeaponSprite = WeaponRotation.Find("WeaponSprite").GetComponent<SpriteRenderer>();
         AttackPoint = WeaponRotation.Find("AttackPosition");
         OptionalSprite = GetComponentInChildren<OptionalSpriteMarket>().SpriteRenderer;
-        hitbox = AttackPoint.GetComponent<PolygonCollider2D>();
-
+        hitbox = AttackPoint.GetComponentInChildren<PolygonCollider2D>();
+        Stats = GetComponent<Stats>();
         // Debug.Log(JsonUtility.ToJson(new PointPolygon2D() { points = hitbox.points }));
 
         BaseUtils.ValidateCheckNullValue(Animator, nameof(Animator), nameof(WeaponController), name);
@@ -112,8 +111,9 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         BaseUtils.ValidateCheckNullValue(AttackPoint, nameof(AttackPoint), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(OptionalSprite, nameof(OptionalSprite), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(hitbox, nameof(hitbox), nameof(WeaponController), name);
+        BaseUtils.ValidateCheckNullValue(Stats, nameof(Stats), nameof(WeaponController), name);
 
-        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Pistol"));
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Sword"));
     }
 
 }

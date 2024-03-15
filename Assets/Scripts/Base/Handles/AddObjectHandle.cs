@@ -20,7 +20,7 @@ public class AddObjectHandle : BaseComponent<AddObjectInfo>, IHandle
     public Vector3 Direction { set; get; }
     public event Action<GameObject> OnCreateObjectFinish;
 
-    private void Awake()
+    private void Start()
     {
 
     }
