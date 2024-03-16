@@ -1,0 +1,6 @@
+{
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "PlayerDetector",
+  "runtimeAnimatorController": "AnimatorController/Player/ArthurPendragonAC"
+}

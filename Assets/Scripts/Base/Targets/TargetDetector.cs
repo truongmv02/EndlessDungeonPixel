@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class TargetDetectorInfo
 
 public class TargetDetector : BaseComponent<TargetDetectorInfo>
 {
-    private Transform target;
+    private Transform currentTarget;
     public List<Collider2D> Targets { protected set; get; }
 
     protected LayerMask layer;
@@ -33,6 +34,8 @@ public class TargetDetector : BaseComponent<TargetDetectorInfo>
     Coroutine detectCoroutine;
     WaitForSeconds waitForSeconds;
 
+    public Action<Transform> OnChangeTarget;
+
     private void Start()
     {
         checkTargets = GetComponents<ICheckTarget>();
@@ -41,8 +44,7 @@ public class TargetDetector : BaseComponent<TargetDetectorInfo>
     }
     public Transform GetTarget()
     {
-        Detect();
-        return target;
+        return currentTarget;
     }
     public void StartDetect()
     {
@@ -72,7 +74,7 @@ public class TargetDetector : BaseComponent<TargetDetectorInfo>
 
     public void FilterTarget()
     {
-        target = null;
+        Transform target = null;
         for (int i = Targets.Count - 1; i >= 0; i--)
         {
             if (!CheckTarget(Targets[i].transform))
@@ -81,6 +83,11 @@ public class TargetDetector : BaseComponent<TargetDetectorInfo>
                 continue;
             }
             target = CheckBestTarget(target, Targets[i].transform);
+        }
+        if (target != currentTarget)
+        {
+            currentTarget = target;
+            OnChangeTarget?.Invoke(currentTarget);
         }
     }
 

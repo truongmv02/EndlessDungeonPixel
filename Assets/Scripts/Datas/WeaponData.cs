@@ -39,6 +39,10 @@ public class WeaponData : BaseData
         {
             info.conditions = UtilsData.GetSubInfos(json["conditions"].AsArray);
         }
+        if (json["handles"] != null)
+        {
+            info.handles = UtilsData.GetSubInfos(json["handles"].AsArray);
+        }
     }
 
 }

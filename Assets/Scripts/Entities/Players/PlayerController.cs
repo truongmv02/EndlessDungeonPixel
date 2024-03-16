@@ -5,25 +5,39 @@ using UnityEngine;
 using System.Data.SqlTypes;
 
 [Serializable]
-public class PlayerInfo
+public class PlayerInfo : EntityInfo
 {
 
 }
 
 public class PlayerController : EntityController
 {
+    PlayerInfo Info;
     Inventory inventory;
+
+    public void SetInfo(PlayerInfo info)
+    {
+        Info = info;
+
+        Animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(Info.runtimeAnimatorController);
+
+        TargetDetector.SetInfo(DataManager.Instance.DetectorData.GetInfo(Info.detectorInfo));
+
+        Stats.Init(DataManager.Instance.PlayerStats.GetStats(Info.stats));
+
+        var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo(Info.stateMachine);
+        BaseUtils.ValidateCheckNullValue(stateMachineInfo, nameof(stateMachineInfo), nameof(PlayerController));
+        StateMachine.Init(this, stateMachineInfo, Animator, Stats);
+    }
+
     protected override void Awake()
     {
         base.Awake();
         inventory = GetComponent<Inventory>();
         BaseUtils.ValidateCheckNullValue(inventory, nameof(inventory), nameof(PlayerController), name);
-
-        TargetDetector.SetInfo(DataManager.Instance.DetectorData.GetInfo("PlayerDetector"));
-        Stats.Init(DataManager.Instance.PlayerStats.GetStats("ArthurPendragonStats"));
+        Name = "ArthurPendragon";
+        SetInfo(DataManager.Instance.PlayerData.GetInfo(Name));
         Movement.Speed = Stats["Speed"];
-        var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo("base");
-        StateMachine.Init(this, stateMachineInfo, Animator, Stats);
     }
 
     protected override void Update()

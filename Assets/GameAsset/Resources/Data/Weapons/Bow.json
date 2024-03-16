@@ -10,15 +10,6 @@
   "components": [
     {
       "assemblyName": "Assembly-CSharp",
-      "type": "AddObjectHandle",
-      "typeInfo": "AddObjectInfo",
-      "data": {
-        "prefab": "Prefab/Bullet/Arrow",
-        "spawnTurnDelay": 0.1
-      }
-    },
-    {
-      "assemblyName": "Assembly-CSharp",
       "type": "DamageToObject"
     },
     {
@@ -50,6 +41,17 @@
     {
       "assemblyName": "Assembly-CSharp",
       "type": "ChargeProcessing"
+    }
+  ],
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "prefab": "Prefab/Bullet/Arrow",
+        "spawnTurnDelay": 0.1
+      }
     }
   ]
 }

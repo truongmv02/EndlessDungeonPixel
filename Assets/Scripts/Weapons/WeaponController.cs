@@ -23,6 +23,7 @@ public class WeaponInfo : BaseInfo
     public string stateMachine;
     public SubInfo[] components;
     public SubInfo[] conditions;
+    public SubInfo[] handles;
 }
 
 [DisallowMultipleComponent]
@@ -81,6 +82,21 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
             var setStats = comp as ISetStats;
             setStats?.SetStats(Stats);
         });
+        UtilsData.AddTypes(Info.conditions, conditions, gameObject, (comp) =>
+        {
+            var setOwner = comp as ISetOwner;
+            setOwner?.SetOwner(this);
+            var setStats = comp as ISetStats;
+            setStats?.SetStats(Stats);
+        });
+        UtilsData.AddTypes(Info.handles, handles, gameObject, (comp) =>
+        {
+            var setOwner = comp as ISetOwner;
+            setOwner?.SetOwner(this);
+            var setStats = comp as ISetStats;
+            setStats?.SetStats(Stats);
+        });
+
 
         StateMachineInfo stateInfo = DataManager.Instance.WeaponStateMachine.GetInfo(Info.stateMachine);
         StateMachine.Init(this, stateInfo, Animator, Stats);

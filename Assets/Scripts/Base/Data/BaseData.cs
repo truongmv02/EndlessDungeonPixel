@@ -13,18 +13,35 @@ public class BaseData
 
     public T GetData<T>(int level)
     {
-        var data = JsonUtility.FromJson<T>(data_dict["Level" + level].AsObject.ToString());
+        string key = "Level" + level;
+        if (!data_dict.ContainsKey(key))
+        {
+            Debug.Log($"{key} not found");
+            return default;
+        }
+        var data = JsonUtility.FromJson<T>(data_dict[key].AsObject.ToString());
         return data;
     }
 
     public JSONNode GetData(int level)
     {
+        string key = "Level" + level;
+        if (!data_dict.ContainsKey(key))
+        {
+            Debug.Log($"{key} not found");
+            return null;
+        }
         var data = data_dict["Level" + level];
         return data;
     }
 
     public T GetData<T>(string key)
     {
+        if (!data_dict.ContainsKey(key))
+        {
+            Debug.Log($"{key} not found");
+            return default;
+        }
         var data = JsonUtility.FromJson<T>(data_dict[key].AsObject.ToString());
         return data;
     }

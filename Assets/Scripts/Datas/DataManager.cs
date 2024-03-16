@@ -6,6 +6,9 @@
     public StatDatas WeaponStats { private set; get; }
     public StatDatas PlayerStats { private set; get; }
     public DetectorData DetectorData { private set; get; }
+    public PlayerData PlayerData { private set; get; }
+    public SkillData SkillData { private set; get; }
+    public EnemyData EnemyData { private set; get; }
 
     public DataManager()
     {
@@ -19,5 +22,8 @@
         WeaponStats = new StatDatas("WeaponStat");
         PlayerStats = new StatDatas("PlayerStat");
         DetectorData = new DetectorData();
+        PlayerData = new PlayerData();
+        SkillData = new SkillData();
+        EnemyData = new EnemyData();
     }
 }

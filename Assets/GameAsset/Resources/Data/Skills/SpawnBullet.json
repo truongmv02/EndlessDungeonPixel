@@ -1,0 +1,28 @@
+{
+  "prefab": "Prefab/Skill/Skill",
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "prefab": "Prefab/Bullet/PistolBullet"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "TargetCondition"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CountDownCondition",
+      "typeInfo": "CountDownInfo",
+      "data": {
+        "timeCountDown": 1,
+        "startValue": false
+      }
+    }
+  ]
+}

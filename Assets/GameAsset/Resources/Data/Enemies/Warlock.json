@@ -1,0 +1,7 @@
+{
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "EnemyDetector",
+  "runtimeAnimatorController": "AnimatorController/Enemy/WarlockAC",
+  "skills": ["SpawnBullet"]
+}

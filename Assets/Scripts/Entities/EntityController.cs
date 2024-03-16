@@ -1,6 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
+public class EntityInfo
+{
+    public string runtimeAnimatorController;
+    public string stats;
+    public string stateMachine;
+    public string detectorInfo;
+}
+
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
