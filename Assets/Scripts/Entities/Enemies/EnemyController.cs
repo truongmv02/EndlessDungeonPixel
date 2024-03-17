@@ -18,13 +18,18 @@ public class EnemyController : EntityController
     {
         base.Awake();
         skillHolder = transform.Find("Skills");
-        SetInfo(DataManager.Instance.EnemyData.GetInfo("Warlock"));
     }
 
     public void SetInfo(EnemyInfo info)
     {
         Info = info;
+        Animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(Info.runtimeAnimatorController);
         TargetDetector.SetInfo(DataManager.Instance.DetectorData.GetInfo(Info.detectorInfo));
+        Stats.Init(DataManager.Instance.PlayerStats.GetStats(Info.stats));
+        // var stateMachineInfo = DataManager.Instance.PlayerStateMachine.GetInfo(Info.stateMachine);
+        //   BaseUtils.ValidateCheckNullValue(stateMachineInfo, nameof(stateMachineInfo), nameof(EnemyController));
+        //    StateMachine.Init(this, stateMachineInfo, Animator, Stats);
+
         foreach (var skillName in Info.skills)
         {
             SkillInfo skillInfo = DataManager.Instance.SkillData.GetInfo(skillName);

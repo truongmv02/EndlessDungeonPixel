@@ -130,7 +130,7 @@ public class TargetDetector : BaseComponent<TargetDetectorInfo>
         waitForSeconds = new WaitForSeconds(Info.detectDelay);
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         if (!Application.isPlaying) return;
 

@@ -18,7 +18,12 @@ namespace MVT.Base.Dungeon
         [SerializeField] private SpawnPointInfo[] spawnInfos;
         List<DoorController> doors;
 
+        public List<EnemyController> enemyList;
         public bool IsVisited { set; get; }
+
+        private int stage = 0;
+        private int currentEnemySpawn;
+        private int enemyInStage;
 
         #region TILE_MAP
         Tilemap ground1Tilemap;
@@ -31,11 +36,48 @@ namespace MVT.Base.Dungeon
         Tilemap walkableTilemap;
         #endregion
 
+
+        private void Start()
+        {
+
+        }
+
+
         public void Init()
         {
             LoadTilemap();
             BlockUnusedDoorWays();
             AddDoorsToRoom();
+
+            var enemySpawnByLevel = roomInfo.enemySpawnByLevel;
+            if (enemySpawnByLevel != null)
+            {
+                enemyInStage = enemySpawnByLevel.enemyCount / enemySpawnByLevel.turnCount;
+            }
+        }
+
+        private void HandleEnemyDie(EnemyController enemy)
+        {
+            if (enemyList == null || enemyList.Count == 0) return;
+            enemyList.Remove(enemy);
+
+            if (enemyList.Count == 0 && stage == roomInfo.enemySpawnByLevel.turnCount)
+            {
+                OpenDoors();
+                return;
+            }
+
+            SpawnEnemy();
+        }
+
+        private void SpawnEnemy()
+        {
+            stage++;
+            if (stage == roomInfo.enemySpawnByLevel.turnCount)
+            {
+                enemyInStage = roomInfo.enemySpawnByLevel.enemyCount - enemyInStage * (stage - 1);
+            }
+            EnemySpawner.Instance.SpawnEnemy(roomInfo.enemySpawnByLevel, spawnInfos, enemyInStage, transform.position);
         }
 
         public void CloseDoors()
@@ -60,8 +102,15 @@ namespace MVT.Base.Dungeon
             if (IsVisited || !collision.CompareTag("Player")) return;
             if (roomInfo.roomType == RoomType.StartRoom || roomInfo.roomType == RoomType.ChestRoom) return;
             CloseDoors();
+            enemyList = new List<EnemyController>();
             IsVisited = true;
+            SpawnEnemy();
             Observer.Instance.Notify("OnRoomChange", this);
+        }
+
+        private void OnDestroy()
+        {
+
         }
 
         #region SET UP TILEMAP METHOD

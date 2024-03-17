@@ -7,7 +7,7 @@ public class CheckObstacle : MonoBehaviour, ICheckTarget
 
     private void Start()
     {
-        layer = LayerMask.GetMask(new[] { "Obstacle", "Wall" });
+        layer = LayerMaskHelper.MergeLayerMask(LayerMaskHelper.ObstacleMask, LayerMaskHelper.WallMask);
     }
     public bool CheckTarget(Transform target)
     {

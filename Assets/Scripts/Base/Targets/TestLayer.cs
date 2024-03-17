@@ -1,14 +1,28 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TestLayer : MonoBehaviour
 {
     public LayerMask layer;
     private LayerMask layer1;
+
     void Start()
     {
-        layer1 = LayerMask.GetMask(new[] { "Player", "Enemy" });
+        List<GameObject> list = new List<GameObject>();
+        list = Spawn().ToList();
+        Debug.Log(list.Count);
+    }
 
+    IEnumerable<GameObject> Spawn()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject gameObject = new GameObject();
+            gameObject.name = i.ToString();
+            yield return gameObject;
+        }
     }
 
     // Update is called once per frame
@@ -16,8 +30,6 @@ public class TestLayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Debug.Log(JsonUtility.ToJson(layer));
-            Debug.Log(layer1.value);
         }
     }
 }
