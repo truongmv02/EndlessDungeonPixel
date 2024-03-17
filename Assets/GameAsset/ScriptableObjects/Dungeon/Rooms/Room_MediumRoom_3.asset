@@ -21,8 +21,8 @@ MonoBehaviour:
   - position: {x: 6, y: 7}
     orientation: 0
     doorPrefab: {fileID: 8391510291556900322, guid: 38e66668e8ee2ff4c9c026994c728fde, type: 3}
-    doorWayStartCoppyPosition: {x: 4, y: 17}
-    doorWayCoppyWidth: 3
+    doorWayStartCoppyPosition: {x: 3, y: 17}
+    doorWayCoppyWidth: 5
     doorWayCoppyHeight: 1
     isConected: 0
     isUnavaiable: 0
@@ -50,4 +50,4 @@ MonoBehaviour:
     doorWayCoppyHeight: 4
     isConected: 0
     isUnavaiable: 0
-  spawnPositions: []
+  dungeonSpawnInfos: []

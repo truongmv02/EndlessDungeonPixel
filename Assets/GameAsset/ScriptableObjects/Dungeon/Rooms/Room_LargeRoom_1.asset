@@ -21,8 +21,8 @@ MonoBehaviour:
   - position: {x: 11, y: 23}
     orientation: 0
     doorPrefab: {fileID: 8391510291556900322, guid: 38e66668e8ee2ff4c9c026994c728fde, type: 3}
-    doorWayStartCoppyPosition: {x: 9, y: 23}
-    doorWayCoppyWidth: 3
+    doorWayStartCoppyPosition: {x: 8, y: 23}
+    doorWayCoppyWidth: 5
     doorWayCoppyHeight: 1
     isConected: 0
     isUnavaiable: 0
@@ -50,4 +50,33 @@ MonoBehaviour:
     doorWayCoppyHeight: 4
     isConected: 0
     isUnavaiable: 0
-  spawnPositions: []
+  dungeonSpawnInfos:
+  - level: 1
+    enemySpawnByLevels:
+    - enemyCount: 26
+      turnCount: 2
+      enemies:
+      - name: Ghost
+        ratio: 10
+      - name: Skeleton
+        ratio: 20
+      - name: Slime
+        ratio: 30
+    - enemyCount: 27
+      turnCount: 2
+      enemies:
+      - name: Devil
+        ratio: 20
+      - name: Slime
+        ratio: 10
+      - name: Goblin
+        ratio: 30
+    - enemyCount: 28
+      turnCount: 2
+      enemies:
+      - name: Orc
+        ratio: 30
+      - name: Warlock
+        ratio: 20
+      - name: Goblin
+        ratio: 10

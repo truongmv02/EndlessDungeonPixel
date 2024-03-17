@@ -18,11 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b102a55301713f7499b4f7fc7849c13c, type: 2}
   - {fileID: 11400000, guid: dfe71b04d109e6f469cf1dde9bdb1cda, type: 2}
   - {fileID: 11400000, guid: 626962b93ab7a4848a5a68971c88d645, type: 2}
-  - {fileID: 11400000, guid: e4aa14b75f4b90843b89009b08053a8f, type: 2}
-  - {fileID: 11400000, guid: 0bf4eff7299c9934db485f778d808784, type: 2}
   - {fileID: 11400000, guid: b7bb34a07a4e4e144996ef4b68dbf86c, type: 2}
-  - {fileID: 11400000, guid: 17dd9a383fcf3144ca6ac135c8aa5923, type: 2}
-  - {fileID: 11400000, guid: 6bdd13776b2afc748bedd18f407d0df3, type: 2}
   - {fileID: 11400000, guid: 37d94ba41744cc248830958727006d39, type: 2}
   - {fileID: 11400000, guid: c57f1abe4edf1dc42b60edde993d40ac, type: 2}
   roomMapList:

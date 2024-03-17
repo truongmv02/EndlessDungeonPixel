@@ -6,22 +6,100 @@ using UnityEngine.Tilemaps;
 
 namespace MVT.Base.Dungeon
 {
+    [System.Serializable]
+    public class SpawnPointInfo
+    {
+        public Vector2 position;
+        public float radius;
+    }
     public class RoomController : MonoBehaviour
     {
         public RoomInfo roomInfo;
-        [HideInInspector] public Tilemap ground1Tilemap;
-        [HideInInspector] public Tilemap ground2Tilemap;
-        [HideInInspector] public Tilemap decoration1Tilemap;
-        [HideInInspector] public Tilemap decoration2Tilemap;
-        [HideInInspector] public Tilemap frontTilemap;
-        [HideInInspector] public Tilemap collisionTilemap;
-        [HideInInspector] public Tilemap minimapTilemap;
-        [HideInInspector] public Tilemap walkableTilemap;
+        [SerializeField] private SpawnPointInfo[] spawnInfos;
+        List<DoorController> doors;
+
+        public bool IsVisited { set; get; }
+
+        #region TILE_MAP
+        Tilemap ground1Tilemap;
+        Tilemap ground2Tilemap;
+        Tilemap decoration1Tilemap;
+        Tilemap decoration2Tilemap;
+        Tilemap frontTilemap;
+        Tilemap collisionTilemap;
+        Tilemap minimapTilemap;
+        Tilemap walkableTilemap;
+        #endregion
 
         public void Init()
         {
             LoadTilemap();
             BlockUnusedDoorWays();
+            AddDoorsToRoom();
+        }
+
+        public void CloseDoors()
+        {
+
+            foreach (DoorController door in doors)
+            {
+                door.CloseDoor();
+            }
+        }
+
+        public void OpenDoors()
+        {
+            foreach (DoorController door in doors)
+            {
+                door.OpenDoor();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (IsVisited || !collision.CompareTag("Player")) return;
+            if (roomInfo.roomType == RoomType.StartRoom || roomInfo.roomType == RoomType.ChestRoom) return;
+            CloseDoors();
+            IsVisited = true;
+            Observer.Instance.Notify("OnRoomChange", this);
+        }
+
+        #region SET UP TILEMAP METHOD
+        public void AddDoorsToRoom()
+        {
+            if (roomInfo.roomType == RoomType.CorridorNS || roomInfo.roomType == RoomType.CorridorEW) return;
+            doors = new List<DoorController>();
+            foreach (var doorWay in roomInfo.doorWayList)
+            {
+                if (doorWay.doorPrefab != null && doorWay.isConected)
+                {
+                    DoorController door = null;
+                    door = Instantiate(doorWay.doorPrefab, gameObject.transform).GetComponent<DoorController>();
+                    if (doorWay.orientation == Orientation.North)
+                    {
+                        door.transform.localPosition = new Vector2(doorWay.position.x + 0.5f, doorWay.position.y + 1);
+                    }
+                    else if (doorWay.orientation == Orientation.South)
+                    {
+                        door.transform.localPosition = new Vector2(doorWay.position.x + 0.5f, doorWay.position.y - 1);
+                    }
+                    else if (doorWay.orientation == Orientation.East)
+                    {
+                        door.transform.localPosition = new Vector2(doorWay.position.x + 1, doorWay.position.y);
+                    }
+                    else if (doorWay.orientation == Orientation.West)
+                    {
+                        door.transform.localPosition = new Vector2(doorWay.position.x - 0.5f, doorWay.position.y);
+                    }
+
+                    doors.Add(door);
+
+                    if (roomInfo.roomType == RoomType.BossRoom)
+                    {
+                        door.IsOpen = false;
+                    }
+                }
+            }
         }
 
         public void BlockUnusedDoorWays()
@@ -151,5 +229,20 @@ namespace MVT.Base.Dungeon
 
         }
 
+        #endregion
+
+        private void OnDrawGizmosSelected()
+        {
+            if (spawnInfos == null || spawnInfos.Length == 0) return;
+
+            foreach (var spawnInfo in spawnInfos)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(new Vector3(transform.position.x + spawnInfo.position.x, transform.position.y + spawnInfo.position.y), spawnInfo.radius);
+                Gizmos.color = Color.white;
+            }
+
+        }
     }
+
 }

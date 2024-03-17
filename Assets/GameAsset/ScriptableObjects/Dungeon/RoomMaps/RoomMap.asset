@@ -16,7 +16,7 @@ MonoBehaviour:
   parentRoom: {fileID: 454767357589139539}
   childRoomList: []
   roomType: 1
-  isSelected: 0
+  isSelected: 1
   rect:
     serializedVersion: 2
     x: 958
@@ -272,6 +272,8 @@ MonoBehaviour:
   - {fileID: -9209486226163368569}
   - {fileID: 454767357589139539}
   - {fileID: 438460826129100257}
+  - {fileID: 7724503501315264480}
+  - {fileID: 5208205163731635382}
 --- !u!114 &227601752796003180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +393,29 @@ MonoBehaviour:
     y: 54.199997
     width: 130
     height: 60
+--- !u!114 &5208205163731635382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551f2a4efba9de45943d7568e99df2f, type: 3}
+  m_Name: Corridor
+  m_EditorClassIdentifier: 
+  id: b4cdbc0b-d03c-4e43-92e1-dfbbcacc039a
+  parentRoom: {fileID: 0}
+  childRoomList: []
+  roomType: 8
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 130
+    height: 60
 --- !u!114 &7599653562459787080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +437,29 @@ MonoBehaviour:
     serializedVersion: 2
     x: 566
     y: 268.2
+    width: 130
+    height: 60
+--- !u!114 &7724503501315264480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551f2a4efba9de45943d7568e99df2f, type: 3}
+  m_Name: BossRoom
+  m_EditorClassIdentifier: 
+  id: bf595cf0-08df-4a80-99bf-66bde634d1e0
+  parentRoom: {fileID: 0}
+  childRoomList: []
+  roomType: 4
+  isSelected: 0
+  rect:
+    serializedVersion: 2
+    x: 921
+    y: 250.20001
     width: 130
     height: 60
 --- !u!114 &7907151529880333495

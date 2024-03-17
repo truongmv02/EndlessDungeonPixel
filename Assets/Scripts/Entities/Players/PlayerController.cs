@@ -39,6 +39,10 @@ public class PlayerController : EntityController
         SetInfo(DataManager.Instance.PlayerData.GetInfo(Name));
         Movement.Speed = Stats["Speed"];
     }
+    private void Start()
+    {
+        GameManager.Instance.Player = this;
+    }
 
     protected override void Update()
     {
