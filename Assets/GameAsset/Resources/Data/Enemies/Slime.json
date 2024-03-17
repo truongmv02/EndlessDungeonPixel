@@ -1,0 +1,8 @@
+{
+  "prefab": "Prefab/Enemy/Enemy",
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "EnemyDetector",
+  "runtimeAnimatorController": "AnimatorController/Enemy/SlimeAC",
+  "skills": ["SpawnBullet"]
+}

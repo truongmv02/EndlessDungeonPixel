@@ -22,8 +22,6 @@ namespace MVT.Base.Dungeon.MapDesign
         public string id;
         public RoomNodeSO parentRoom;
         public List<RoomNodeSO> childRoomList = new List<RoomNodeSO>();
-
-
         public RoomType roomType;
 
 #if UNITY_EDITOR

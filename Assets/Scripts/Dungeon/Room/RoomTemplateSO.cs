@@ -4,6 +4,28 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+[System.Serializable]
+public class SpawnEnemyRatio
+{
+    public string name;
+    public int ratio;
+}
+
+[System.Serializable]
+public class EnemySpawnByLevel
+{
+    public int enemyCount;
+    public int turnCount;
+    public SpawnEnemyRatio[] enemies;
+}
+
+[System.Serializable]
+public class DungeonSpawnEnemyInfo
+{
+    public int level;
+    public EnemySpawnByLevel[] enemySpawnByLevels;
+}
+
 namespace MVT.Base.Dungeon
 {
     [CreateAssetMenu(fileName = "Room_", menuName = "Scriptable Objects/Dungeon/Room")]
@@ -17,8 +39,7 @@ namespace MVT.Base.Dungeon
         public Vector2Int upperBounds;
 
         public List<DoorWay> doorWayList;
-
-        public Vector2Int[] spawnPositions;
+        public DungeonSpawnEnemyInfo[] dungeonSpawnInfos;
 
 #if UNITY_EDITOR
 

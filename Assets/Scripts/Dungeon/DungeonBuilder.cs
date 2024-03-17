@@ -1,10 +1,6 @@
 ﻿using MVT.Base.Dungeon.MapDesign;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace MVT.Base.Dungeon
 {
@@ -118,6 +114,7 @@ namespace MVT.Base.Dungeon
             room.upperBoundsTemplate = roomTemplate.upperBounds;
             room.roomType = roomTemplate.roomType;
             room.prefab = roomTemplate.prefab;
+            room.enemySpawnByLevel = EnemySpawner.Instance.GetEnemySpawnByLevel(1, roomTemplate.dungeonSpawnInfos);
             foreach (var doorWay in roomTemplate.doorWayList)
             {
                 room.doorWayList.Add(doorWay.Clone());

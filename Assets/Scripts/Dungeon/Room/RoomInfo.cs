@@ -21,5 +21,5 @@ public class RoomInfo
     public List<RoomInfo> childRoomList = new List<RoomInfo>();
 
     public List<DoorWay> doorWayList = new List<DoorWay>();
-
+    public EnemySpawnByLevel enemySpawnByLevel;
 }
