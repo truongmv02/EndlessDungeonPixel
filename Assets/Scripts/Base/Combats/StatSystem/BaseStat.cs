@@ -22,12 +22,14 @@ public class BaseStat
     [field: SerializeField] public string StatName { get; set; }
     protected float value;
     public event Action<float> OnValueChange;
+    public event Action OnValueZero;
     public float Value
     {
         set
         {
             this.value = Mathf.Clamp(value, 0, Mathf.Infinity);
             OnValueChange?.Invoke(this.value);
+            if (this.value <= 0) OnValueZero?.Invoke();
         }
         get => value;
     }

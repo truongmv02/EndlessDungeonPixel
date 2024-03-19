@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [Serializable]
@@ -15,6 +16,8 @@ public class StateMachine : MonoBehaviour
     public State CurrentStaste { set; get; }
     public List<State> StateList { get; set; } = new List<State>();
     public Animator Animator { get; set; }
+
+    private State startState;
 
     public object Owner { get; protected set; }
 
@@ -38,20 +41,31 @@ public class StateMachine : MonoBehaviour
         {
             Destroy(states.gameObject);
         }
-
         var statesObj = new GameObject("States");
         statesObj.transform.SetParent(transform);
-
         UtilsData.AddStates(info.states, StateList, statesObj.transform);
 
-        State idleState = null;
+        var controller = animator.runtimeAnimatorController as AnimatorController;
 
+        if (controller == null)
+        {
+            var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
+            controller = overrideController.runtimeAnimatorController as AnimatorController;
+        }
+
+        var defaultState = controller.layers[0].stateMachine.defaultState;
         foreach (var state in StateList)
         {
             state.Init(this, animator, stats);
-            if (state.StateInfo.stateName == "Idle") idleState = state;
+            if (state.StateInfo.stateName == defaultState.name) startState = state;
         }
-        ChangeState(idleState);
+
+        ChangeState(startState);
+    }
+
+    public void RunDefaulState()
+    {
+        ChangeState(startState);
     }
 
 

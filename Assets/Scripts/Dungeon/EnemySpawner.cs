@@ -39,7 +39,6 @@ public class EnemySpawner : SingletonMonoBehaviour<EnemySpawner>
                     float randomY = Random.Range(-spawnPointRandom.radius, spawnPointRandom.radius);
                     Vector3 positionRandom = spawnPointRandom.position + new Vector2(randomX, randomY);
                     var enemyInfo = DataManager.Instance.EnemyData.GetInfo(enemyRatio.name);
-                    Debug.Log(enemyRatio.name);
                     var enemyPrefab = Resources.Load<GameObject>(enemyInfo.prefab);
                     var enemy = Instantiate(enemyPrefab, roomPosition + positionRandom, Quaternion.identity).GetComponent<EnemyController>();
                     enemy.SetInfo(enemyInfo);
@@ -48,7 +47,6 @@ public class EnemySpawner : SingletonMonoBehaviour<EnemySpawner>
                 }
                 else
                 {
-                    Debug.Log("Fail " + enemyRatio.name);
                     randomValue -= enemyRatio.ratio;
                 }
             }

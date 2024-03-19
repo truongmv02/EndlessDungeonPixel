@@ -7,12 +7,7 @@ public class DamageToObject : MonoBehaviour, ISetStats
     Stats stats;
     private void Start()
     {
-        addObjectHandle = GetComponent<AddObjectHandle>();
-
-        BaseUtils.ValidateCheckNullValue(addObjectHandle, nameof(addObjectHandle), nameof(DamageToObject), name);
-        BaseUtils.ValidateCheckNullValue(stats, nameof(stats), nameof(DamageToObject), name);
-
-        addObjectHandle.OnCreateObjectFinish += HandleCreateObjectFinish;
+        LoadComponents();
     }
 
     private void OnDestroy()
@@ -29,5 +24,17 @@ public class DamageToObject : MonoBehaviour, ISetStats
     public void SetStats(Stats stats)
     {
         this.stats = stats;
+        LoadComponents();
+    }
+
+    void LoadComponents()
+    {
+        if (addObjectHandle == null)
+        {
+            addObjectHandle = GetComponent<AddObjectHandle>();
+            if (addObjectHandle != null)
+                addObjectHandle.OnCreateObjectFinish += HandleCreateObjectFinish;
+        }
+
     }
 }

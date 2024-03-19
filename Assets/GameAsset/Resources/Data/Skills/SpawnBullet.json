@@ -20,7 +20,7 @@
       "type": "CountDownCondition",
       "typeInfo": "CountDownInfo",
       "data": {
-        "timeCountDown": 1,
+        "timeCountDown": 2,
         "startValue": false
       }
     }

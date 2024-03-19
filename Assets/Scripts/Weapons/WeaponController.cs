@@ -132,7 +132,7 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
         BaseUtils.ValidateCheckNullValue(hitbox, nameof(hitbox), nameof(WeaponController), name);
         BaseUtils.ValidateCheckNullValue(Stats, nameof(Stats), nameof(WeaponController), name);
 
-        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Sword"));
+        SetInfo(DataManager.Instance.WeaponDatas.GetInfo("Pistol"));
     }
 
 }

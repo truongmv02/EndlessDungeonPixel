@@ -9,10 +9,6 @@ public class KnockBackToObject : MonoBehaviour, ISetStats
     private void Start()
     {
         addObjectHandle = GetComponent<AddObjectHandle>();
-
-        BaseUtils.ValidateCheckNullValue(addObjectHandle, nameof(addObjectHandle), nameof(KnockBackToObject), name);
-        BaseUtils.ValidateCheckNullValue(stats, nameof(stats), nameof(KnockBackToObject), name);
-
         addObjectHandle.OnCreateObjectFinish += HandleCreateObjectFinish;
     }
 
@@ -30,4 +26,5 @@ public class KnockBackToObject : MonoBehaviour, ISetStats
     {
         this.stats = stats;
     }
+
 }

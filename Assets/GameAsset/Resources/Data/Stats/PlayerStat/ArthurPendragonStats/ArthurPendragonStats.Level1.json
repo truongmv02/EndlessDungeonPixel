@@ -10,7 +10,15 @@
     },
     {
       "statName": "ManaMax",
-      "value": 100
+      "value": 5
+    },
+    {
+      "statName": "Health",
+      "value": 10
+    },
+    {
+      "statName": "Mana",
+      "value": 10
     }
   ]
 }

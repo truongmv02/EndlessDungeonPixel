@@ -39,7 +39,7 @@ namespace MVT.Base.Dungeon
 
         private void Start()
         {
-
+            Observer.Instance.AddObserver("EnemyDie", HandleEnemyDie);
         }
 
 
@@ -56,8 +56,9 @@ namespace MVT.Base.Dungeon
             }
         }
 
-        private void HandleEnemyDie(EnemyController enemy)
+        private void HandleEnemyDie(object enemyObj)
         {
+            var enemy = enemyObj as EnemyController;
             if (enemyList == null || enemyList.Count == 0) return;
             enemyList.Remove(enemy);
 
@@ -66,8 +67,10 @@ namespace MVT.Base.Dungeon
                 OpenDoors();
                 return;
             }
-
-            SpawnEnemy();
+            if (enemyList.Count == 0)
+            {
+                SpawnEnemy();
+            }
         }
 
         private void SpawnEnemy()
@@ -77,7 +80,7 @@ namespace MVT.Base.Dungeon
             {
                 enemyInStage = roomInfo.enemySpawnByLevel.enemyCount - enemyInStage * (stage - 1);
             }
-            EnemySpawner.Instance.SpawnEnemy(roomInfo.enemySpawnByLevel, spawnInfos, enemyInStage, transform.position);
+            enemyList = EnemySpawner.Instance.SpawnEnemy(roomInfo.enemySpawnByLevel, spawnInfos, enemyInStage, transform.position);
         }
 
         public void CloseDoors()
@@ -110,7 +113,7 @@ namespace MVT.Base.Dungeon
 
         private void OnDestroy()
         {
-
+            Observer.Instance.RemoveObserver("EnemyDie", HandleEnemyDie);
         }
 
         #region SET UP TILEMAP METHOD

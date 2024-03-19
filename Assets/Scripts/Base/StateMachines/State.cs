@@ -90,6 +90,7 @@ public class State : MonoBehaviour, ISetInfo
 
     public virtual bool IsSuitable()
     {
+        if (conditions == null || conditions.Count == 0) return false;
         foreach (var condition in conditions)
         {
             if (!condition.IsSuitable) return false;
