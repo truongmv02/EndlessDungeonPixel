@@ -784,38 +784,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1305155542646006187, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_Size.x
-      value: 0.625
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305155542646006187, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_Size.y
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1305155542646006187, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585460660532273759, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585460660532273759, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585460660532273759, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585460660532273759, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2585460660532273759, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2913912844764584854, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4
@@ -859,14 +827,6 @@ PrefabInstance:
     - target: {fileID: 6696100630493227050, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7985853804003912922, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 1cba8187c133627458bf0c635b651d66, type: 2}
-    - target: {fileID: 8430250007317177049, guid: 1724df29be4a96f4abcb50635b2d13ba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -99,8 +99,6 @@ public class WeaponController : RootComponent<WeaponInfo>, IGetInput
             setStats?.SetStats(Stats);
         });
 
-
-
         StateMachineInfo stateInfo = DataManager.Instance.WeaponStateMachine.GetInfo(Info.stateMachine);
         StateMachine.Init(this, stateInfo, Animator, Stats);
     }

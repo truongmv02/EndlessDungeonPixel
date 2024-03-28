@@ -18,9 +18,7 @@ public class StateMachine : MonoBehaviour
     public Animator Animator { get; set; }
 
     private State startState;
-
     public object Owner { get; protected set; }
-
 
     private void Update()
     {
@@ -36,13 +34,8 @@ public class StateMachine : MonoBehaviour
         Owner = owner;
         Animator = animator;
 
-        var states = transform.Find("States");
-        if (states != null)
-        {
-            Destroy(states.gameObject);
-        }
-        var statesObj = new GameObject("States");
-        statesObj.transform.SetParent(transform);
+        var statesObj = transform.Find("States");
+
         UtilsData.AddStates(info.states, StateList, statesObj.transform);
 
         var controller = animator.runtimeAnimatorController as AnimatorController;
@@ -67,8 +60,6 @@ public class StateMachine : MonoBehaviour
     {
         ChangeState(startState);
     }
-
-
 
     public void ChangeState(State state)
     {

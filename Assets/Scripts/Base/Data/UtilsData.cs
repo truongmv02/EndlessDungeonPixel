@@ -1,6 +1,7 @@
 ﻿using SimpleJSON;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -75,38 +76,98 @@ public static class UtilsData
 
         types.Clear();
     }
+
+    private static void ClearState<T>(List<T> types)
+    {
+        foreach (var type in types)
+        {
+            var component = type as Component;
+            if (component)
+            {
+                GameObject.Destroy(component.gameObject);
+                GameObject.Destroy(component);
+            }
+        }
+
+        types.Clear();
+    }
     public static void AddStates<T>(SubInfo[] subInfos, List<T> types, Transform parent, Action<object> addSubInfoFinish = null) where T : class
     {
-        ClearTypes(types);
-        if (subInfos == null) return;
+        var typesAlready = new List<T>(types);
+        var currentTypes = new List<T>(types);
+        types.Clear();
         foreach (var subInfo in subInfos)
         {
-            var stateInfo = subInfo.data as StateInfo;
-            GameObject gameObject = new GameObject(stateInfo.stateName);
-            gameObject.transform.SetParent(parent);
-
-            object type = GetType(subInfo, gameObject, addSubInfoFinish);
-            var typeT = type as T;
-            if (typeT != null)
+            bool typeExists = false;
+            foreach (var type in currentTypes)
             {
+                if (subInfo.type == type.GetType())
+                {
+                    ISetInfo setInfo = type as ISetInfo;
+                    if (subInfo.data != null && setInfo != null)
+                    {
+                        setInfo.SetInfo(subInfo.data);
+                    }
+                    currentTypes.Remove(type);
+                    types.Add(type);
+                    addSubInfoFinish?.Invoke(type);
+                    typeExists = true;
+                    break;
+                }
+            }
+            if (!typeExists)
+            {
+                var stateInfo = subInfo.data as StateInfo;
+                GameObject gameObject = new GameObject(stateInfo.stateName);
+                gameObject.transform.SetParent(parent);
+                object type = GetType(subInfo, gameObject, addSubInfoFinish);
+                var typeT = type as T;
                 types.Add(typeT);
             }
         }
+
+        ClearState(currentTypes);
     }
     public static void AddTypes<T>(SubInfo[] subInfos, List<T> types, GameObject gameObject = null, Action<object> addSubInfoFinish = null) where T : class
     {
-        ClearTypes(types);
 
-        if (subInfos == null) return;
-
+        if (subInfos == null)
+        {
+            ClearTypes(types);
+            return;
+        }
+        var typesAlready = new List<T>(types);
+        var currentTypes = new List<T>(types);
+        var typesAdded = new List<T>();
+        types.Clear();
         foreach (var subInfo in subInfos)
         {
-            object type = GetType(subInfo, gameObject, addSubInfoFinish);
-            var typeT = type as T;
-            if (typeT != null)
+            bool typeExists = false;
+            foreach (var type in currentTypes)
             {
+                if (subInfo.type == type.GetType())
+                {
+                    ISetInfo setInfo = type as ISetInfo;
+                    if (subInfo.data != null && setInfo != null)
+                    {
+                        setInfo.SetInfo(subInfo.data);
+                    }
+                    currentTypes.Remove(type);
+                    types.Add(type);
+                    addSubInfoFinish?.Invoke(type);
+                    typeExists = true;
+                    break;
+                }
+            }
+            if (!typeExists)
+            {
+                object type = GetType(subInfo, gameObject, addSubInfoFinish);
+                var typeT = type as T;
                 types.Add(typeT);
             }
         }
+
+        ClearTypes(currentTypes);
     }
+
 }
