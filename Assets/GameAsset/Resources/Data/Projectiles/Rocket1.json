@@ -1,0 +1,5 @@
+{
+  "prefab": "Prefab/Projectile/Rocket1",
+  "sprite": ["Sprites/Bullet/Rocket1"],
+  "hitEffect": "Data/ProjectileHitEffect/ProjectileHitEffect_Yellow"
+}

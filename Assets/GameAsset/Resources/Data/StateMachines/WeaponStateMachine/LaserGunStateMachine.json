@@ -1,0 +1,80 @@
+{
+  "states": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponIdleState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Idle",
+        "animationName": "Idle",
+        "nextStates": ["Charge", "Idle"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "InputCondition",
+            "typeInfo": "InputInfo",
+            "data": {
+              "inputValue": false
+            }
+          },
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "ChargeCondition",
+            "typeInfo": "ChargeConditionInfo",
+            "data": {
+              "chargeAmountMin": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponChargeState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Charge",
+        "animationName": "Charge",
+        "nextStates": ["Action", "Idle"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "InputCondition",
+            "typeInfo": "InputInfo",
+            "data": {
+              "inputValue": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponShootLaserState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Action",
+        "animationName": "Action",
+        "nextStates": ["Idle"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "InputCondition",
+            "typeInfo": "InputInfo",
+            "data": {
+              "inputValue": true
+            }
+          },
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "ChargeCondition",
+            "typeInfo": "ChargeConditionInfo",
+            "data": {
+              "chargeAmountMin": 1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

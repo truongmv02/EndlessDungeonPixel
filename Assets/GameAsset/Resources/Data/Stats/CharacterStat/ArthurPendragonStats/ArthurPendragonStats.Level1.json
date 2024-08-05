@@ -1,0 +1,16 @@
+{
+  "stats": [
+    {
+      "statName": "Speed",
+      "value": 6
+    },
+    {
+      "statName": "Health",
+      "value": 500
+    },
+    {
+      "statName": "Energy",
+      "value": 200
+    }
+  ]
+}

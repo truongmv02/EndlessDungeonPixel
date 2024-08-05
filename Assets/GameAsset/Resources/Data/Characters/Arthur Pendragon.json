@@ -1,0 +1,11 @@
+{
+  "name": "Arthur Pendragon",
+  "prefab": "Prefab/Character/Character",
+  "sprite": ["Sprites/Character/ArthurPendragon"],
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "CharacterDetector",
+  "runtimeAnimatorController": "AnimatorController/Character/ArthurPendragonAC",
+  "initialWeapon": "Pistol Bad",
+  "prices": [2000, 2200, 2300, 2400, 2500]
+}

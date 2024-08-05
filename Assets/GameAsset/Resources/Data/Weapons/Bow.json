@@ -1,0 +1,49 @@
+{
+  "position": { "x": 0.22, "y": 0.45 },
+  "attackPosition": { "x": 0.3, "y": 0.02 },
+  "rotation": 45,
+  "sprite": ["Sprites/Weapon/bow_Idle"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
+  "runtimeAnimatorController": "AnimatorController/Weapon/BowAC",
+  "stats": "BowStats",
+  "stateMachine": "BowStateMachine",
+  "sound": "Sounds/fx_bow_shoot",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CombatRange"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "Charge"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeToSpawnObject"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "OptionalSprite",
+      "typeInfo": "OptionalSpriteInfo",
+      "data": {
+        "sprite": "Sprites/Bullet/arrow",
+        "position": { "x": 0.16, "y": -0.16 },
+        "rotation": -45
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeProcessing"
+    }
+  ],
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "objectInfo": "Arrow"
+      }
+    }
+  ]
+}

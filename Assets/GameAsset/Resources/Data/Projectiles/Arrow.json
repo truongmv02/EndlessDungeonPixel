@@ -1,0 +1,6 @@
+{
+  "prefab": "Prefab/Projectile/Arrow",
+  "sprite": ["Sprites/Bullet/Arrow"],
+  "material": "",
+  "hitEffect": ""
+}

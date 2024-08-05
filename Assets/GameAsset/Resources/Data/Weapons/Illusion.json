@@ -1,0 +1,39 @@
+{
+  "position": { "x": 0.122, "y": 0.3 },
+  "attackPosition": { "x": 0.66, "y": 0.005 },
+  "rotation": 0,
+  "sprite": ["Sprites/Weapon/Illusion"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
+  "runtimeAnimatorController": "AnimatorController/Weapon/IllusionAC",
+  "stats": "IllusionStats",
+  "stateMachine": "LaserGunStateMachine",
+  "sound": "",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CombatRange"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "Charge"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeToSpawnObject"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "ChargeProcessing"
+    }
+  ],
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "objectInfo": "IllusionLaser"
+      }
+    }
+  ]
+}

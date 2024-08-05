@@ -1,0 +1,11 @@
+{
+  "detectDelay": 0.2,
+  "detectRange": 10,
+  "layers": ["Enemy", "Item"],
+  "targetInfos": [
+    {
+      "targetTag": "ItemPickup",
+      "maxRange": 1.5
+    }
+  ]
+}

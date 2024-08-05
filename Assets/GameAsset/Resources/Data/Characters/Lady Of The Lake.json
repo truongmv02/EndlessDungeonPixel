@@ -1,0 +1,11 @@
+{
+  "name": "Lady Of The Lake",
+  "prefab": "Prefab/Character/Character",
+  "sprite": ["Sprites/Character/LadyOfTheLake"],
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "CharacterDetector",
+  "runtimeAnimatorController": "AnimatorController/Character/LadyOfTheLakeAC",
+  "initialWeapon": "Assault Rifle",
+  "prices": [2300, 2200, 2300, 2400, 2500]
+}

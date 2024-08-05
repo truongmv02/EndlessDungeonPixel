@@ -1,0 +1,11 @@
+{
+  "name": "Morgan Le Fay",
+  "prefab": "Prefab/Character/Character",
+  "sprite": ["Sprites/Character/MorganLeFay"],
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "CharacterDetector",
+  "runtimeAnimatorController": "AnimatorController/Character/MorganLeFayAC",
+  "initialWeapon": "Illusion",
+  "prices": [3000, 2200, 2300, 2400, 2500]
+}

@@ -1,0 +1,27 @@
+{
+  "position": { "x": 0.122, "y": 0.3 },
+  "attackPosition": { "x": 0.85, "y": 0.05 },
+  "rotation": 0,
+  "sprite": ["Sprites/Weapon/SMG"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
+  "runtimeAnimatorController": "AnimatorController/Weapon/SMGAC",
+  "stats": "SMGStats",
+  "stateMachine": "GunStateMachine",
+  "sound": "Sounds/fx_gun_4",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CombatRange"
+    }
+  ],
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "objectInfo": "BulletYellow4x4"
+      }
+    }
+  ]
+}

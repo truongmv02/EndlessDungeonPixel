@@ -1,0 +1,49 @@
+{
+  "states": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponIdleState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Idle",
+        "animationName": "Idle",
+        "nextStates": ["Action"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "InputCondition",
+            "typeInfo": "InputInfo",
+            "data": {
+              "inputValue": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "WeaponShootState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Action",
+        "animationName": "Action",
+        "hasExit": true,
+        "nextStates": ["Idle"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "InputCondition",
+            "typeInfo": "InputInfo",
+            "data": {
+              "inputValue": true
+            }
+          },
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "CountDownCondition"
+          }
+        ]
+      }
+    }
+  ]
+}

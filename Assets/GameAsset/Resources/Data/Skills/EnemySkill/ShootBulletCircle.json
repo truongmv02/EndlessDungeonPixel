@@ -1,0 +1,35 @@
+{
+  "prefab": "Prefab/Skill/Skill",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CombatRange"
+    }
+  ],
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "objectInfo": "BulletRed4x4",
+        "amount": 36,
+        "angleVariation": 10
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "TargetCondition"
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CountDownCondition",
+      "typeInfo": "CountDownInfo",
+      "data": {
+        "startValue": false
+      }
+    }
+  ]
+}

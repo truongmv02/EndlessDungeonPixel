@@ -1,0 +1,14 @@
+{
+  "name": "Demon",
+  "prefab": "Prefab/Enemy/Enemy",
+  "stats": "EnemyStatsBase",
+  "stateMachine": "base",
+  "detectorInfo": "EnemyDetector",
+  "runtimeAnimatorController": "AnimatorController/Enemy/DemonAC",
+  "skills": [
+    {
+      "skillName": "ShootOneBullet",
+      "skillStats": "ShootOneBulletStats"
+    }
+  ]
+}

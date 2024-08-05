@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70813b3407c07de4fb72be129ff26548, type: 3}
+  m_Name: CorridorEW1
+  m_EditorClassIdentifier: 
+  id: 82af62b7eca7fd740a853ee0a9bb6ebd
+  prefab: {fileID: 7632707518015161212, guid: 7bbf73e1d88818646bdf9ec9770f05c2, type: 3}
+  roomType: 7
+  lowerBounds: {x: 0, y: 0}
+  upperBounds: {x: 14, y: 2}
+  doorWayList:
+  - position: {x: 14, y: 1}
+    orientation: 1
+    doorPrefab: {fileID: 0}
+    doorWayStartCoppyPosition: {x: 0, y: 0}
+    doorWayCoppyWidth: 0
+    doorWayCoppyHeight: 0
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: 0, y: 1}
+    orientation: 3
+    doorPrefab: {fileID: 0}
+    doorWayStartCoppyPosition: {x: 0, y: 0}
+    doorWayCoppyWidth: 0
+    doorWayCoppyHeight: 0
+    isConected: 0
+    isUnavaiable: 0
+  dungeonSpawnInfos: []

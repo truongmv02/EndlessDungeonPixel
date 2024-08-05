@@ -1,0 +1,27 @@
+{
+  "position": { "x": 0.4, "y": 0.45 },
+  "rotation": 0,
+  "attackPosition": { "x": 0, "y": 0 },
+  "attackPointRotation": 0,
+  "isActiveHitbox": true,
+  "hitbox": {
+    "points": [
+      { "x": -0.6, "y": 1.25 },
+      { "x": 0.6, "y": 1.25 },
+      { "x": 0.3, "y": 0 },
+      { "x": -0.3, "y": 0 }
+    ]
+  },
+  "sprite": ["Sprites/Weapon/weapons", "weapons_12"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
+  "runtimeAnimatorController": "AnimatorController/Weapon/SwordAC",
+  "stats": "SwordStats",
+  "stateMachine": "SwordStateMachine",
+  "sound": "",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "MeleeWeapon"
+    }
+  ]
+}

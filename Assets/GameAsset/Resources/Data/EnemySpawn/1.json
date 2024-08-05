@@ -1,0 +1,26 @@
+[
+  {
+    "turnCount": 3,
+    "enemyCount": 20,
+    "enemies": [
+      {
+        "enemyName": "",
+        "level": 1,
+        "minRatio": 1,
+        "maxRatio": 50
+      },
+      {
+        "enemyName": "",
+        "level": 1,
+        "minRatio": 51,
+        "maxRatio": 80
+      },
+      {
+        "enemyName": "",
+        "level": 1,
+        "minRatio": 81,
+        "maxRatio": 100
+      }
+    ]
+  }
+]

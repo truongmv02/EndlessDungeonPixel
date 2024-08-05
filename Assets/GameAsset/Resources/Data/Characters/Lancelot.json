@@ -1,0 +1,11 @@
+{
+  "name": "Lancelot",
+  "prefab": "Prefab/Character/Character",
+  "sprite": ["Sprites/Character/Lancelot"],
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "CharacterDetector",
+  "runtimeAnimatorController": "AnimatorController/Character/LancelotAC",
+  "initialWeapon": "Dead Star Laser",
+  "prices": [2500, 2200, 2300, 2400, 2500]
+}

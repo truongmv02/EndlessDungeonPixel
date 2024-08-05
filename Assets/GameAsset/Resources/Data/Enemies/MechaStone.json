@@ -1,0 +1,31 @@
+{
+  "name": "Demon",
+  "prefab": "Prefab/Enemy/Enemy",
+  "stats": "MechaStone",
+  "stateMachine": "MechaStone",
+  "detectorInfo": "EnemyDetector",
+  "runtimeAnimatorController": "AnimatorController/Enemy/MechaStoneAC",
+  "skills": [
+    {
+      "skillName": "ShootBulletCircle",
+      "skillStats": "ShootBulletCircleStats"
+    },
+    {
+      "skillName": "ShootBulletCircleDelay",
+      "skillStats": "ShootBulletCircleDelayStats"
+    },
+
+    {
+      "skillName": "ShootBulletCircle5",
+      "skillStats": "ShootBulletCircleStats"
+    },
+    {
+      "skillName": "ShootBulletCircleDelay3",
+      "skillStats": "ShootBulletCircleDelayStats"
+    },
+    {
+      "skillName": "Shoot10Bullet",
+      "skillStats": "Shoot10BulletStats"
+    }
+  ]
+}

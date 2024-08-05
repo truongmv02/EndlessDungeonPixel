@@ -1,0 +1,10 @@
+{
+  "coin": 20000,
+  "characterSelect": "Arthur Pendragon",
+  "characters": [
+    {
+      "name": "Arthur Pendragon",
+      "level": 1
+    }
+  ]
+}

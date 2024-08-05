@@ -1,0 +1,14 @@
+{
+  "name": "Goblin",
+  "prefab": "Prefab/Enemy/Enemy",
+  "stats": "EnemyStatsBase",
+  "stateMachine": "base",
+  "detectorInfo": "EnemyDetector",
+  "runtimeAnimatorController": "AnimatorController/Enemy/GoblinAC",
+  "skills": [
+    {
+      "skillName": "ShootOneBullet",
+      "skillStats": "ShootOneBulletStats"
+    }
+  ]
+}

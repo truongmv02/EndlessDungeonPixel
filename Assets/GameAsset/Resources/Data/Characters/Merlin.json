@@ -1,0 +1,11 @@
+{
+  "name": "Merlin",
+  "prefab": "Prefab/Character/Character",
+  "sprite": ["Sprites/Character/Merlin"],
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "CharacterDetector",
+  "runtimeAnimatorController": "AnimatorController/Character/MerlinAC",
+  "initialWeapon": "Machine Gun",
+  "prices": [2600, 2200, 2300, 2400, 2500]
+}

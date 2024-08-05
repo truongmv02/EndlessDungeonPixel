@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70813b3407c07de4fb72be129ff26548, type: 3}
+  m_Name: MediumRoom 4
+  m_EditorClassIdentifier: 
+  id: 82af62b7eca7fd740a853ee0a9bb6ebd
+  prefab: {fileID: 7632707518015161212, guid: 15b3f6d9fc8aa03479b3df5d2e07f255, type: 3}
+  roomType: 2
+  lowerBounds: {x: -2, y: -1}
+  upperBounds: {x: 17, y: 17}
+  doorWayList:
+  - position: {x: 8, y: 17}
+    orientation: 0
+    doorPrefab: {fileID: 8250365820280250183, guid: 422634824ac40314fbd19d96a927b5ee, type: 3}
+    doorWayStartCoppyPosition: {x: 5, y: 17}
+    doorWayCoppyWidth: 4
+    doorWayCoppyHeight: 3
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: 17, y: 8}
+    orientation: 1
+    doorPrefab: {fileID: 8247725948303774199, guid: 446eab8a6899321498cf8445d9b1ee8c, type: 3}
+    doorWayStartCoppyPosition: {x: 15, y: 10}
+    doorWayCoppyWidth: 3
+    doorWayCoppyHeight: 4
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: 8, y: -1}
+    orientation: 2
+    doorPrefab: {fileID: 1926961497183759116, guid: b21805ce1733b8f43b3ad8516e47610b, type: 3}
+    doorWayStartCoppyPosition: {x: 5, y: 0}
+    doorWayCoppyWidth: 4
+    doorWayCoppyHeight: 2
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: -2, y: 8}
+    orientation: 3
+    doorPrefab: {fileID: 2108615847564786892, guid: 43d18661eb82594439efe9aedf53876e, type: 3}
+    doorWayStartCoppyPosition: {x: -2, y: 10}
+    doorWayCoppyWidth: 3
+    doorWayCoppyHeight: 4
+    isConected: 0
+    isUnavaiable: 0
+  dungeonSpawnInfos:
+  - level: 1
+    enemySpawnByLevels:
+    - enemyCount: 20
+      turnCount: 2
+      enemies:
+      - name: Ghost
+        ratio: 10
+      - name: Skeleton
+        ratio: 20
+      - name: Slime
+        ratio: 30
+    - enemyCount: 22
+      turnCount: 2
+      enemies:
+      - name: Devil
+        ratio: 20
+      - name: Slime
+        ratio: 10
+      - name: Goblin
+        ratio: 30
+    - enemyCount: 22
+      turnCount: 2
+      enemies:
+      - name: Orc
+        ratio: 30
+      - name: Warlock
+        ratio: 20
+      - name: Goblin
+        ratio: 10

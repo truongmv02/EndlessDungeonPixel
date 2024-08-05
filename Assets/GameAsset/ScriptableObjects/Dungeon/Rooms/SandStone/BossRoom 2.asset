@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70813b3407c07de4fb72be129ff26548, type: 3}
+  m_Name: BossRoom 2
+  m_EditorClassIdentifier: 
+  id: 82af62b7eca7fd740a853ee0a9bb6ebd
+  prefab: {fileID: 7632707518015161212, guid: efe47bcfa9ad41842a66a28bb0c293b1, type: 3}
+  roomType: 4
+  lowerBounds: {x: -2, y: -1}
+  upperBounds: {x: 21, y: 21}
+  doorWayList:
+  - position: {x: 10, y: 21}
+    orientation: 0
+    doorPrefab: {fileID: 8250365820280250183, guid: 422634824ac40314fbd19d96a927b5ee, type: 3}
+    doorWayStartCoppyPosition: {x: 7, y: 21}
+    doorWayCoppyWidth: 4
+    doorWayCoppyHeight: 3
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: 21, y: 10}
+    orientation: 1
+    doorPrefab: {fileID: 8247725948303774199, guid: 446eab8a6899321498cf8445d9b1ee8c, type: 3}
+    doorWayStartCoppyPosition: {x: 19, y: 12}
+    doorWayCoppyWidth: 3
+    doorWayCoppyHeight: 4
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: 10, y: -1}
+    orientation: 2
+    doorPrefab: {fileID: 1926961497183759116, guid: b21805ce1733b8f43b3ad8516e47610b, type: 3}
+    doorWayStartCoppyPosition: {x: 7, y: 0}
+    doorWayCoppyWidth: 4
+    doorWayCoppyHeight: 2
+    isConected: 0
+    isUnavaiable: 0
+  - position: {x: -2, y: 10}
+    orientation: 3
+    doorPrefab: {fileID: 2108615847564786892, guid: 43d18661eb82594439efe9aedf53876e, type: 3}
+    doorWayStartCoppyPosition: {x: -2, y: 12}
+    doorWayCoppyWidth: 3
+    doorWayCoppyHeight: 4
+    isConected: 0
+    isUnavaiable: 0
+  dungeonSpawnInfos:
+  - level: 1
+    enemySpawnByLevels:
+    - enemyCount: 1
+      turnCount: 1
+      enemies:
+      - name: MechaStone
+        ratio: 0

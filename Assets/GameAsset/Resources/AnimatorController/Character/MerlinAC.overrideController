@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MerlinAC
+  m_Controller: {fileID: 9100000, guid: 4bc1db9755b22ee499fa761b82683ece, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 7f49995c7cfd4ba469538d7f81f17e25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c7bcbec19c1878d4d96e55bdcb04beb6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e22a184fd54d4ef458222dec7a0bf2bb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aade6ccd3edf54f4498158b7bba49a21, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6e32a3de8c01fd44f8d792ee09198b7c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 461c09f587e446f47b13c300cf94311a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f4c4d92ddedc0004eb7b475322e4d92a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5274618b0cda9f84eb5640134c0990bb, type: 2}

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DeadStarLaserAC
+  m_Controller: {fileID: 9100000, guid: 7e3b3e5616476bd498be62886f9d73f3, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 77f919e9b54bd57468b64e16bdbc5cf2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1d604583317d7a44ab0572871eb78b9f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 108828130a961224cb21bdd9023f7294, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0451dc23bef7e3e40a21bbbeb152d264, type: 2}

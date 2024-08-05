@@ -1,0 +1,5 @@
+{
+  "detectDelay": 0.2,
+  "detectRange": 10,
+  "layers": ["Player"]
+}

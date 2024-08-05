@@ -1,0 +1,28 @@
+{
+  "stats": [
+    {
+      "statName": "Cooldown",
+      "value": 1
+    },
+    {
+      "statName": "Energy",
+      "value": 1
+    },
+    {
+      "statName": "Damage",
+      "value": 4
+    },
+    {
+      "statName": "KnockBackStrength",
+      "value": 7
+    },
+    {
+      "statName": "Range",
+      "value": 15
+    },
+    {
+      "statName": "BulletSpeed",
+      "value": 10
+    }
+  ]
+}

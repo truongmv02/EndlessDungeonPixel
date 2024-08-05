@@ -1,0 +1,29 @@
+{
+  "position": { "x": 0.122, "y": 0.35 },
+  "attackPosition": { "x": 1.05, "y": 0.0 },
+  "rotation": 0,
+  "sprite": ["Sprites/Weapon/SidewinderGold"],
+  "itemPrefab": "Prefab/ItemPickup/WeaponPickup",
+  "runtimeAnimatorController": "AnimatorController/Weapon/SidewinderGoldAC",
+  "stats": "SidewinderGoldStats",
+  "stateMachine": "GunStateMachine",
+  "sound": "Sounds/Shotgun",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CombatRange"
+    }
+  ],
+  "handles": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "AddObjectHandle",
+      "typeInfo": "AddObjectInfo",
+      "data": {
+        "objectInfo": "BulletBlue4x4",
+        "amount": 8,
+        "angleVariation": 5
+      }
+    }
+  ]
+}

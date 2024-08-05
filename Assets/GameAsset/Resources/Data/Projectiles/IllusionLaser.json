@@ -1,0 +1,18 @@
+{
+  "prefab": "Prefab/Projectile/LaserBeam",
+  "hitEffect": "Data/ProjectileHitEffect/ProjectileHitEffect_Yellow",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "LaserBeam",
+      "typeInfo": "LaserBeamInfo",
+      "data": {
+        "material": "Materials/Laser/Laser2",
+        "startWidth": 0.4,
+        "endWidth": 0.4,
+        "hitboxWidth": 0.2,
+        "startColor": { "r": 1.0, "g": 0.0, "b": 0.6472077369689941, "a": 1.0 }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Fisher King",
+  "prefab": "Prefab/Character/Character",
+  "sprite": ["Sprites/Character/FisherKing"],
+  "stats": "ArthurPendragonStats",
+  "stateMachine": "base",
+  "detectorInfo": "CharacterDetector",
+  "runtimeAnimatorController": "AnimatorController/Character/FisherKingAC",
+  "initialWeapon": "Sword",
+  "prices": [2100, 2200, 2300, 2400, 2500]
+}

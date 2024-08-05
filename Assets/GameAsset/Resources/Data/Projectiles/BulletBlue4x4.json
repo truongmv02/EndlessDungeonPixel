@@ -1,0 +1,6 @@
+{
+  "prefab": "Prefab/Projectile/PlayerBullet4x4",
+  "sprite": ["Sprites/Bullet/Bullet4x4"],
+  "material": "Materials/Bullet/BulletBlue_EmissionShader",
+  "hitEffect": "Data/ProjectileHitEffect/ProjectileHitEffect_Yellow"
+}

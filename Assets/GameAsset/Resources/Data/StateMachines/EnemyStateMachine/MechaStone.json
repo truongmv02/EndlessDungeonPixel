@@ -1,0 +1,42 @@
+{
+  "states": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "EnemyIdleState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Idle",
+        "animationName": "Idle"
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "EnemyRunIdleState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "RunIdle",
+        "animationName": "Idle"
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "EnemyRunState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Run",
+        "animationName": "Run"
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "EnemyMeleeAttackState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "MeleeAttack",
+        "animationName": "MeleeAttack",
+        "nextStates": ["Idle"],
+        "hasExit": true
+      }
+    }
+  ]
+}

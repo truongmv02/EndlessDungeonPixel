@@ -1,0 +1,14 @@
+{
+  "name": "Skeleton",
+  "prefab": "Prefab/Enemy/Enemy",
+  "stats": "EnemyStatsBase",
+  "stateMachine": "base",
+  "detectorInfo": "EnemyDetector",
+  "runtimeAnimatorController": "AnimatorController/Enemy/SkeletonAC",
+  "skills": [
+    {
+      "skillName": "ShootOneBullet",
+      "skillStats": "ShootOneBulletStats"
+    }
+  ]
+}

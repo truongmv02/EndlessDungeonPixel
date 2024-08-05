@@ -1,0 +1,28 @@
+{
+  "stats": [
+    {
+      "statName": "DamageCooldown",
+      "value": 0.2
+    },
+    {
+      "statName": "Energy",
+      "value": 1
+    },
+    {
+      "statName": "ChargeTime",
+      "value": 0.5
+    },
+    {
+      "statName": "Damage",
+      "value": 2
+    },
+    {
+      "statName": "KnockBackStrength",
+      "value": 7
+    },
+    {
+      "statName": "Range",
+      "value": 15
+    }
+  ]
+}

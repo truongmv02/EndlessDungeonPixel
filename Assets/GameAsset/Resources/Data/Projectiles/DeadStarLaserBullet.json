@@ -1,0 +1,17 @@
+{
+  "prefab": "Prefab/Projectile/PlayerBullet4x4",
+  "hitEffect": "Data/ProjectileHitEffect/ProjectileHitEffect_Yellow",
+  "components": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "TrailComponent",
+      "typeInfo": "TrailInfo",
+      "data": {
+        "material": "Materials/Bullet/LaserBlue",
+        "time": 0.1,
+        "startWidth": 0.1,
+        "endWidth": 0.1
+      }
+    }
+  ]
+}

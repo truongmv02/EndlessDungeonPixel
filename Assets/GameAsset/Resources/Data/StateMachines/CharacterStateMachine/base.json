@@ -1,0 +1,44 @@
+{
+  "states": [
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CharacterIdleState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Idle",
+        "animationName": "Idle",
+        "nextStates": ["Run"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "MovementCondition",
+            "typeInfo": "MovementConditionInfo",
+            "data": {
+              "state": "Stop"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "assemblyName": "Assembly-CSharp",
+      "type": "CharacterRunState",
+      "typeInfo": "StateInfo",
+      "data": {
+        "stateName": "Run",
+        "animationName": "Run",
+        "nextStates": ["Idle"],
+        "conditions": [
+          {
+            "assemblyName": "Assembly-CSharp",
+            "type": "MovementCondition",
+            "typeInfo": "MovementConditionInfo",
+            "data": {
+              "state": "Run"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
