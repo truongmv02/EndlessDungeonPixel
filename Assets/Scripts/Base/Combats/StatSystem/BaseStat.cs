@@ -27,7 +27,7 @@ public class BaseStat
     {
         set
         {
-            if (this.value <= 0) return;
+            if (this.value <= 0 && value <= 0) return;
             this.value = Mathf.Clamp(value, 0, Mathf.Infinity);
             OnValueChange?.Invoke(this.value);
             if (this.value <= 0) OnValueZero?.Invoke();

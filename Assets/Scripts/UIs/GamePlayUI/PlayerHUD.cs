@@ -40,6 +40,8 @@ public class PlayerHUD : MonoBehaviour
         HandleHealthChange(0);
         HandleEnergyChange(0);
 
+        Debug.Log("player status");
+
     }
 
     void HandleHealthChange(float value)

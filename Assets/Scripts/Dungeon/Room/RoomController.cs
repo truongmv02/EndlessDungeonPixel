@@ -40,6 +40,7 @@ namespace MVT.Base.Dungeon
         private void Awake()
         {
             navMesh = transform.Find("Navmesh").GetComponent<NavMeshSurface>();
+            navMesh.hideEditorLogs = true;
             Init();
         }
 

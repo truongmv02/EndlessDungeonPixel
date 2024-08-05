@@ -15,6 +15,7 @@ public class HpBossUI : MonoBehaviour
         currentHealth = stats["CurrentHealth"];
         currentHealth.OnValueChange += HandleHealthChange;
         gameObject.SetActive(true);
+        HandleHealthChange(0);
     }
 
     void HandleHealthChange(float value)

@@ -52,15 +52,16 @@ public class EntityController : MonoBehaviour, ISetInfo
         var statInfos = statDatas.GetStats(info.stats);
         Stats.Init(statInfos);
         Movement.Speed = Stats["Speed"];
+        BaseStat health = Stats["Health"];
         BaseStat currentHealth = Stats["CurrentHealth"];
         if (currentHealth == null)
         {
             currentHealth = new BaseStat() { StatName = "CurrentHealth" };
             currentHealth.OnValueZero += Death;
         }
-
-        BaseStat health = Stats["Health"];
         currentHealth.Value = health.Value;
+
+
 
         Stats[currentHealth.StatName] = currentHealth;
     }
